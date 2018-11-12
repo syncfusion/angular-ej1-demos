@@ -93,6 +93,6 @@ In case of any questions regarding the use of Syncfusion Essential JS 1 for Angu
 
 Refer the Syncfusion Essential JS 1 for Angular Product Release Notes in [online Release Notes at Syncfusion](http://help.syncfusion.com/angular/release-notes/?utm_source=github&utm_medium=listing&utm_campaign=angular-github-samples).
 
-## <a name="License Information"></a>License Information##
+## <a name="License Information"></a>License Information
 
 For licensing information about Syncfusion Essential JS 1 for Angular, Download the Syncfusion License Agreements from [here](https://www.syncfusion.com/content/downloads/syncfusion_license.pdf).
