@@ -1,0 +1,11 @@
+<div style="background-color: #FAFAF9;border-color: lightgray;margin-left:0px;border-width: 2px;opacity: 0.7;height: 45px;width:240px">
+    <label style="color:Black;font-size:22px;margin:15px;margin-top:7px;margin-left:20px;margin-right:20px;height:25px;font-weight:Normal;">USA Election 2012</label>
+</div>
+<ej-map id="mapcontrol" [enableAnimation]="enableanimation">
+
+    <e-layers>
+        <e-layer [shapeData]="usmap" [enableSelection]="enableselection" [enableMouseHover]="enablemousehover" [shapeSettings]="shapesettings" [legendSettings]="legendsettings" [shapeDataPath]="shapedatapath" [shapePropertyPath]="shapepropertypath" [showMapItems]="showmapitems" [dataSource]="electiondata">
+        </e-layer>
+    </e-layers>
+
+</ej-map>

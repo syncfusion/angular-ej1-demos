@@ -1,0 +1,146 @@
+<div class="expenseanalysis">
+    <div class="sample-title"></div>
+    <div class="container">
+        <div class="sample-container">
+            <div id="control-container">
+                <div class="text-title"></div>
+                <div class="row imagetile">
+                    <div class="col-md-5">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="left-image">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="horz-align: right;">
+                                        <div class="e-exptitle">
+                                            <label class="e-name">
+                                                David Carter</label><br />
+                                            <label class="e-phone">
+                                                Phone : +1 919.494.1974
+                                            </label>
+                                            <br />
+                                            <label class="e-mail">
+                                                email : davidc@syncfusion.com</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-7 e-values-td">
+                        <div class="initborder">
+                            <table class="e-values">
+                                <tr>
+                                    <td class="{{fund.class}}"  *ngFor='let fund of fundDetails'>
+                                        <p class="{{fund.amount}}">{{fund.expense}}</p>
+                                        <p class="{{fund.text}}">{{fund.value}}</p>
+                                        <p class="{{fund.transaction}}">{{fund.transc_value}}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="chartgridtable">
+                    <div id="control-panel" class="add-filter-panel">
+                        <div *ngIf="showpopup">
+                            <ej-waitingpopup id="control-panel" target='#control-panel' [showOnInit]='true'>
+                            </ej-waitingpopup>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1" style="DISPLAY: inline">
+                                <label class="sample-t">
+                                    Transactions</label>
+                            </div>
+                            <div class="col-md-8" style="DISPLAY: inline"></div>
+                            <div class="col-md-3" style="DISPLAY: inline;">
+                                <table style="float: left;">
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <input type="text" ej-dropdownlist id="selectMonth" targetID="MonthList" [(value)]="monthValue" width="150px" height="30px" (select)="changeMonth($event)"
+                                                />
+                                                <div id="MonthList">
+                                                    <ul>
+                                                        <li *ngFor='let months of year'>{{months.month}}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="add-image" (click)='adddetails($event)'></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expensegridborder">
+                        <div class="col-xs-13 grid-container">
+                            <ej-grid id="ExpenseGrid" #gridreference [allowPaging]='true' [allowSorting]='true' [allowKeyboardNavigation]="true" [isResponsive]='true'
+                                [enableResponsiveRow]='false' [pageSettings.pageCount]='4' [editSettings]="expensegrideditSettings"
+                                [enableRowHover]='false' [(dataSource)]='expensegriddata'>
+                                <e-columns>
+                                    <e-column field="DateTime" headerText="Date" textAlign="ej.TextAlign.Right" [width]="40" [validationRules]="{required:true}"
+                                        format="{0:MMM/dd/yyyy}" editType="datepicker"></e-column>
+                                    <e-column field="CategoryName" headerText="CategoryName" [width]="100" [validationRules]="expensegridvalidations" [visible]='false'></e-column>
+                                    <e-column field="Description" headerText="Description" [width]="100" [validationRules]="expensegridvalidations"></e-column>
+                                    <e-column field="SubCategory" headerText="Category" [width]="70" [validationRules]="expensegridvalidations" [priority]="3"></e-column>
+                                    <e-column field="Amount" headerText="Amount" textAlign="ej.TextAlign.Right" [width]="50" [validationRules]="{required:true}"
+                                        format="{0:C}" editType="numericedit" [editParams]="{ decimalPlaces: 2, minValue: 0 }"
+                                        [priority]="4"></e-column>
+                                </e-columns>
+                            </ej-grid>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="col-xs-13 chart-content">
+                            <div class="samplesec">
+                                <div>
+                                    <div class="samplename">
+                                        <span>Expense Analysis Chart </span>
+                                    </div>
+                                    <div class="samplewrapper">
+                                        <div class="samplecontent">
+                                            <div class="chart-back-button" [style.display]='btndisplay'>
+                                                <button id="btnBack" ej-button size='mini' (click)='btnClick($event)' text="Back"></button>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <ej-chart id="ExpenseChart" style="display:block;" #piechartreference [isResponsive]=true [legend.visible]='false' (pointRegionClick)="chartregionClick($event)"
+                                                        (animationComplete)='completeAnimation($event)' (seriesRendering)="seriesRender($event)"
+                                                        background='transparent'>
+                                                        <e-seriescollection>
+                                                        <e-series type='pie' name='ExpenseChart' [dataSource]="chartDS" [enableAnimation]='true' [labelPosition]='outside' border.width='1' xName='ExpenseCategory'
+                                                            yName='Amount' [marker.dataLabel.visible]="true" [marker.dataLabel.connectorLine.height]='20' [enableSmartLabels]='true'
+                                                            [explode]='true'>
+                                                        </e-series>
+                                                        </e-seriescollection>
+                                                    </ej-chart>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="spend-div">
+                                                        <table cellspacing="10">
+                                                            <tr *ngFor='let detail of spentDetails'>
+                                                                <td class="{{detail.level}}">
+                                                                    <p class="{{detail.spent_text}}">{{detail.value}}</p>
+                                                                    <p class="{{detail.spent_amt}}">{{detail.trans}}</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+ <div class="content-container-fluid">
+        <div class="row">
+            <div class="cols-sample-area" align="center">
+                <div id="circularframe">
+                    <div id="PointerCircularGauge">
+                        <ej-circulargauge #gauge backgroundcolor="transparent" [isResponsive]=false value="80" width="400" [readOnly]="true" [enableAnimation]="false">
+    <e-scales>
+        <e-scale [showRanges]="true" [labels]="labels" [border.width]="0.5" [startAngle]="122" [sweepAngle]="296" [radius]="130" [showScaleBar]="true" [size]="1" [maximum]="120" [majorIntervalValue]="20" [minorIntervalValue]="10">
+            <e-pointers>
+                <e-pointer [value]="60" [showBackNeedle]="true" [backNeedleLength]="20" [length]="90" [width]="7">
+                </e-pointer>
+            </e-pointers>
+            <e-ticks>
+                <e-tick type='major' [distanceFromScale]='2' [height]='16' [width]='1' color='#8c8c8c'>
+                </e-tick>
+                <e-tick type='minor' [distanceFromScale]='2' [height]='8' [width]='1' color='#8c8c8c'>
+                </e-tick>
+            </e-ticks>
+            <e-labels>
+                <e-label color="#8c8c8c">
+                </e-label>
+            </e-labels>
+            <e-ranges>
+                <e-range [distanceFromScale]='-30' [startValue]='0' [endValue]='70' border.color="#32b3c6">
+                </e-range>
+                <e-range [distanceFromScale]='-30' [startValue]='70' [endValue]='110' backgroundColor='#fc0606' border.color='#fc0606'>
+                </e-range>
+                <e-range [distanceFromScale]='-30' [startValue]='110' [endValue]='120' backgroundColor='#f5b43f' border.color='#f5b43f'>
+                </e-range>
+            </e-ranges>
+        </e-scale>
+    </e-scales>
+</ej-circulargauge>
+                    </div>
+                </div>
+            </div>
+
+        <div id="property-window" class="box wide">
+                <div class="prop-grid">
+                    <div class="row">
+                        <div class="col-md-3">
+                            Pointer Length
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <div id="">
+                                <ej-slider #pointerlength id="pointerlength" [sliderType]="minRange"  [value]="95" [height]="20" [width]="110" [minValue]="50" [maxValue]="100" [enableAnimation]="true" (slide)="onchange($event)" (change)="onchange($event)"></ej-slider>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            Pointer Width
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <div id="">
+                                <ej-slider #pointerwidth id="pointerwidth" [sliderType]="minRange"  [value]="7" [height]="20" [width]="110" [minValue]="2" [maxValue]="15" [enableAnimation]="true" (slide)="onchange($event)" (change)="onchange($event)"></ej-slider>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Back Needle Length
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <div id="">
+                                <ej-slider #needlelength id="needlelength" [sliderType]="minRange"  [value]="19" [height]="20" [width]="110" [minValue]="10" [maxValue]="20" [enableAnimation]="true" (slide)="onchange($event)" (change)="onchange($event)"></ej-slider>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            Cap Radius
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <div id="">
+                                <ej-slider #pointercapradius id="pointercapradius" [sliderType]="minRange"  [value]="12" [height]="20" [width]="110" [minValue]="9" [maxValue]="15" [enableAnimation]="true" (slide)="onchange($event)" (change)="onchange($event)"></ej-slider>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Pointer Value
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <div id="">
+                                <ej-slider #pointervalue id="pointervalue" [sliderType]="minRange"  [value]="60" [height]="20" [width]="110" [minValue]="0" [maxValue]="120" [enableAnimation]="true" (ejchange)="pointerchange($event)"></ej-slider>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            Needle Style
+                        </div>
+                        <div class="col-md-3" style="margin-top:4px;">
+                            <input id="needlestyle" ej-dropdownlist #needlestyle (select)="onchange1($event)" [selectedIndex]="0" [dataSource]="['triangle', 'trapezoid', 'arrow']" width="100%" />
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
