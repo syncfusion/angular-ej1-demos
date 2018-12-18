@@ -1,0 +1,59 @@
+<ej-chart #axisCrossing id="axisCrossing" style="display:block;" (load)="onchartload($event)" [primaryXAxis.range.min]="1998" [primaryXAxis.range.max]="2012" [primaryXAxis.range.interval]="2" [primaryXAxis.crossesAt]="0" [primaryYAxis.range.min]="-1" [primaryYAxis.range.max]="1" [primaryYAxis.range.interval]= "0.25"
+				primaryYAxis.name="primaryYAxis"
+				primaryYAxis.labelFormat="p0"
+				[primaryYAxis.crossesAt]="2005"
+				primaryYAxis.title.text="Profit / loss percentage" commonSeriesOptions.type="bubble"
+				[commonSeriesOptions.enableAnimation]="true"			
+				[commonSeriesOptions.tooltip.visible]="true" title.text="Sales Analysis" title.subTitle.text="Profit till 2010" title.subTitle.textAlignment="center"
+			(toolTipInitialize)="tooltip($event)"
+            load="loadTheme"
+            [isResponsive]="true"
+            [legend.visible]="false">
+    <e-seriescollection>
+        <e-series name="Sales" opacity="0.7"   [dataSource]="axisCrossingData" xName="x" yName="y" size="size" pointColorMappingName="fill"></e-series>
+    </e-seriescollection>
+</ej-chart>
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+   <div class="row">
+							<div class="col-md-3">
+								<b>X-Axis</b>
+							</div>
+							</div>
+						<div class="row">
+							<div class="col-md-3">
+								 Crosses At
+							</div>
+							<div class="col-md-3 aligntop">
+								<input id="xCrossingValue" type="text" ej-numerictextbox value="0" (ejchange)="onchange1($event)"   width="100%" />
+							</div>
+							<div class="col-md-3" style="width:80px">
+								  Show Next to Axis Line
+							</div>
+							<div class="col-md-3 aligntop">
+								  <ej-checkbox #myCheck1 (ejchange)="xAxisCrossing($event)" [checked]="true"></ej-checkbox>
+							</div>
+						</div>						
+						<br/>
+						<div class="row">
+							<div class="col-md-3">
+								   <b>Y-Axis</b>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								   Crosses At
+							</div>
+							<div class="col-md-3 aligntop">
+								<input id="yCrossingValue" type="text" ej-numerictextbox value="2005" (ejchange)="onchange2($event)"  width="100%" />
+							</div>
+							<div class="col-md-3" style="width:80px">
+								  Show Next to Axis Line
+							</div>
+							<div class="col-md-3 aligntop">
+								  <ej-checkbox #myCheck2 (ejchange)="yAxisCrossing($event)" [checked]="true"></ej-checkbox>
+							</div>
+						</div>					
+						<br/>
+ </div>
+ </div>
