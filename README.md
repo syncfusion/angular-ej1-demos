@@ -5,7 +5,7 @@ This repository contains the demos of Essential JS 1 for Angular components, whi
 This section guides you to run the Syncfusion EJ1 Angular samples into your local machine.
 
 * [Prerequisites](#prerequisites)
-* [Repository Structure](#repository-structure)
+* [Repository Structure](#repository-structure) 
 * [License](#license)
 * [Using the examples](#using-the-examples)
 * [Installing](#installing)
