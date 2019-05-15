@@ -1,6 +1,6 @@
 {
   "name": "ej-angular-demo",
-  "version": "17.1.0.38",
+  "version": "17.1.0.47",
   "scripts": {
     "start": "node --max_old_space_size=4096 node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --progress --port 8080 --open",
     "bundle": "rimraf dist && node --max_old_space_size=8192 .\\node_modules\\webpack\\bin\\webpack.js --config config/webpack.prod.js --progress",

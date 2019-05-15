@@ -1,0 +1,18 @@
+ej-pivotgrid {
+    display: block;
+    height: 450px;
+    width: 100%; 
+    overflow: auto;
+}
+
+.e-pivotgrid{
+    position: inherit !important;
+}
+
+.col-md-10 {
+    position: static !important;
+}
+
+.outlet {
+    position: static !important;
+}
