@@ -13,7 +13,7 @@ This section guides you to run the Syncfusion EJ1 Angular samples into your loca
 * [Components Catalog](#components-catalog)
 * [Documentation](#documentation)
 * [Demos](#demos)
-* [Release Notes](#release-notes)
+* [Release Notes](#release-notes) 
 * [Support and Feedback](#support-and-feedback)
 
 ## <a name="Prerequisites"></a>Prerequisites ##
