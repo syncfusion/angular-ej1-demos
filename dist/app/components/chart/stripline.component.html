@@ -1,0 +1,35 @@
+<ej-chart #stripLine id="stripLine" style="display:block;" (load)="onchartload($event)" chartArea.border.color='#686868' [chartArea.border.width]="4"   [chartArea.border.opacity]="1" primaryXAxis.title.text='Month'
+                [primaryXAxis.majorGridLines.visible]="false" [primaryYAxis.range.min]="10" [primaryYAxis.range.max]="40" [primaryYAxis.range.interval]="5"
+                 primaryYAxis.title.text='Temperature in Celsius'
+                 primaryYAxis.axisLine.color='#808080'
+                 primaryYAxis.labelFormat="{value} C" [primaryYAxis.stripLine]="Strip" [isResponsive]="true"
+             title.text='Weather Report'
+             size.height="600"
+             [legend.visible]="false">
+    <e-seriescollection>
+        <e-series [dataSource]="striplineData"
+					xName="x"
+					yName="y"
+					name='Course'
+                    type='line'
+                    fill="White"
+                     marker.shape='circle'
+                     [marker.size.height]="12" [marker.size.width]="12"
+                     [marker.border.width]="4"
+                     [marker.visible]="true"
+                     marker.fill="black"
+                     [tooltip]="Tooltip"></e-series>
+	</e-seriescollection>
+</ej-chart>
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+      			 <div class="row">
+                        <div class="col-md-3">
+                            StripLine Orientation:
+                        </div>
+                        <div class="col-md-3">
+			<input id="selectType" ej-dropdownlist #selectType (select)="onchange1($event)" [selectedIndex]="0" [dataSource]="['Horizontal', 'Vertical']" width="100%" />
+                            </div>
+                        </div>
+                    </div>
+</div>

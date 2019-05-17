@@ -1,0 +1,34 @@
+<div class="content-container-fluid">
+        <div class="row">
+            <div class="cols-sample-area">
+
+                <div id="chartContent">
+				   <ej-chart #chart id="chart" style="display:block;"  [primaryXAxis.crosshairLabel.visible]="true"
+                    [primaryYAxis.crosshairLabel.visible]="true"
+                    [primaryYAxis.range.min]="80" [primaryYAxis.range.max]="130" [primaryYAxis.range.interval]="10"
+				   [crosshair.visible]="true"
+                     crosshair.type='trackball'
+                     crosshair.marker.shape='circle'
+                    [crosshair.marker.visible]="true" size.height="600" 
+				  (load)="onchartload($event)"
+                            size.height="400"
+                            [legend.visible]="true">
+	<e-seriescollection>
+	  <e-series type='line' tooltip.format="#point.x#  : #point.y#" [tooltip.visible]="true"></e-series>
+	</e-seriescollection>
+</ej-chart>
+				</div>
+                <div style="width:96% !important;position: relative;">
+                    <div id="scrollContent" style="position: relative;">
+                        <ej-rangenavigator #range style="display:block;" align="center" id="container_range1" [tooltipSettings]="rntooltip" enableDefferedUpdate="true" padding="15" [series]="series" [allowSnapping]="true"
+    selectedRangeSettings.start="2009/5/11"  selectedRangeSettings.end="2009/8/1" scrollRangeSettings.start="2009/1/1"  scrollRangeSettings.end="2014/2/31" [enableScrollbar]="true" (rangeChanged)="onRangeChanged($event)" (scrollStart)="onScrollStart($event)" (scrollEnd)="onScrollbarChanged($event)" (load)="onchartload($event)" padding="15" [isResponsive]="true" sizeSettings.height="120">
+</ej-rangenavigator>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+

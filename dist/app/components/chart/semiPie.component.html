@@ -1,0 +1,56 @@
+<ej-chart #semipie id="semipie" style="display:block;" (load)="onchartload($event)" title.text='Agricultural land in 2011 (% of land area)'
+            [isResponsive]="true"
+            size.height="600"
+			(seriesRendering)="seriesRender($event)"
+            [legend.visible]="false" legend.shape='circle'>
+    <e-seriescollection>
+        <e-series [dataSource]="SemiPieData" xName="x" yName="y" 
+				     marker.dataLabel.visible="true"
+                     marker.dataLabel.shape="none"
+                    marker.dataLabel.textMappingName="text"					 
+					marker.dataLabel.connectorLine.type='line'
+                    tooltip.visible="true"
+                    name='Agricultural land'
+					type="doughnut"
+					[enableAnimation]="true"
+					labelPosition='outside'
+					[enableSmartLabels]="true"
+					[explode]="true" 
+					[startAngle]="-90" 
+					[endAngle]="90"
+                ></e-series>
+	</e-seriescollection>
+</ej-chart>
+
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+      <div class="row">					
+						<div class="col-md-3">
+                            Start Angle
+                        </div>
+						<div class="col-md-3">
+                            <div id="startAngleSlider">
+							  <ej-slider #startAngleSlider id="startAngleSlider" [sliderType]="minRange"  [value]="-90" [height]="16" [width]="110" [minValue]="-360" [maxValue]="360" [enableAnimation]="true" [incrementStep]="1" (ejchange)="onchange1($event)"></ej-slider>
+							</div>
+                        </div>
+                        <div class="col-md-3">
+                            End Angle
+                        </div>
+                        <div class="col-md-3">
+                            <div id="endAngleSlider">
+							 <ej-slider #endAngleSlider id="endAngleSlider" [sliderType]="minRange"  [value]="90" [height]="16" [width]="110" [minValue]="-360" [maxValue]="360" [enableAnimation]="true" [incrementStep]="1" (ejchange)="onChangeEnd($event)"></ej-slider>
+							</div>
+                        </div>
+                    </div><br/>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Series Type
+                        </div>
+                        <div class="col-md-3">
+                            <div id="dropdown">
+		<input id="optSeriesType" ej-dropdownlist #optSeriesType (select)="onChangeType($event)" [selectedIndex]="0" [dataSource]="['Doughnut', 'Pie']" width="100%" />
+                            </div>
+                        </div>
+                    </div>
+</div>
+</div>
