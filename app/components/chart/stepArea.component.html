@@ -1,0 +1,13 @@
+<ej-chart id="StepArea" style="display:block;" primaryXAxis.title.text='Year'  primaryYAxis.title.text="Production(billion kWh)"
+                primaryYAxis.labelFormat='{value}B'   commonSeriesOptions.type='steparea' [commonSeriesOptions.enableAnimation]="true"
+                commonSeriesOptions.marker.shape='circle'
+                [commonSeriesOptions.marker.visible]="true" title.text='Electricity- Production'>
+    <e-seriescollection>
+        <e-series [dataSource]="StepAreaData" xName="x" yName="y"
+				 name='Brazil'
+					opacity="0.5" 
+					border.color='transparent'
+					fill='#69D2E7' [marker.size.height]="12" [marker.size.width]="12"></e-series>
+    </e-seriescollection>
+
+</ej-chart>

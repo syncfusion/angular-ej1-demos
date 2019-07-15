@@ -1,0 +1,22 @@
+<ej-schedule id="CategorizeSchedule"
+  width="100%"
+  height="525px"
+  [currentDate]=currentdate
+  [categorizeSettings.dataSource]=categorizeData
+  [categorizeSettings.enable]=categorizeenable
+  [categorizeSettings.allowMultiple]=categorizemultiple
+  categorizeSettings.id="id"
+  categorizeSettings.text="text"
+  categorizeSettings.color="color"
+  categorizeSettings.fontColor="fontColor"
+  [contextMenuSettings]=contextmenu
+  [appointmentSettings.dataSource]=scheduleData 
+  appointmentSettings.id="Id"
+  appointmentSettings.subject="Subject" 
+  appointmentSettings.startTime="StartTime" 
+  appointmentSettings.endTime="EndTime"
+  appointmentSettings.allDay="AllDay"
+  appointmentSettings.recurrence="Recurrence"
+  appointmentSettings.recurrenceRule="RecurrenceRule"
+  appointmentSettings.categorize="Categorize" >
+</ej-schedule>
