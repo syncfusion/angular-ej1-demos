@@ -1,0 +1,26 @@
+       
+ .row [class*="cols-"]:first-child > div:first-child {
+    margin: 0 auto;
+}
+.autocomplete .frame {
+    display: table;
+    width: 500px;
+    padding: 50px;
+    height:150px;
+}
+.frame {
+    border: 1px solid #BBBCBB;
+    border-radius: 10px;
+    color: #5C5C5C;
+}
+.txt{
+    font-weight: 600;
+   
+    display: inline-block;
+}
+.txt.deli{
+     margin-bottom: 10px;
+}
+.txt.visual{
+margin-top: 10px;
+}

@@ -1,0 +1,8 @@
+<ej-chart id="combination" style="display:block;" [isResponsive]="true" [legend.visible]="true" legend.font.size="15" legend.shape="seriesType" legend.position="bottom" title.text="Sales Report " [primaryXAxis.axisLine.visible]="true" primaryXAxis.title.text="Month"
+    [primaryYAxis.axisLine.visible]="true" primaryYAxis.title.text="Unit Sold" [commonSeriesOptions.tooltip.visible]="true" (load)="onchartload($event)">
+    <e-seriescollection>
+        <e-series [dataSource]="data" xName="xName" yName="yName" name="Unit Sold" type="column" enableAnimation="true" tooltip.format="#point.x# <br/> Unit Sold:  #point.y# <br/>" fill="#69D2E7"></e-series>
+        <e-series [dataSource]="data" xName="xName" yName="yName1" name="Total Transaction" type="line" enableAnimation="true" tooltip.format="#point.x# <br/> Profit:  #point.y# <br/>" [marker.visible]="true" [marker.shape]="circle" [marker.size.width]="8" [marker.size.height]="8"
+            [border.width]="2"></e-series>
+    </e-seriescollection>
+</ej-chart>

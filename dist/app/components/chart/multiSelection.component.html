@@ -1,0 +1,42 @@
+<ej-chart id="container" style="display:block;" (rangeSelected)="selectedRegion($event)"  primaryXAxis.title.text='Years' [primaryYAxis.range.min]="0" [primaryYAxis.range.max]="100" [primaryYAxis.range.interval]="20"
+                  primaryYAxis.title.text='Sales in Units' [commonSeriesOptions.selectionSettings.enable]="true" commonSeriesOptions.selectionSettings.mode='range' commonSeriesOptions.selectionSettings.rangeType='xy'
+                  commonSeriesOptions.type='scatter'
+                  commonSeriesOptions.tooltip.visible="true"
+			  title.text="Profit Comparison of A and B"
+              size.height="550"
+              [isResponsive]="true"
+              [legend.visible]="true"
+			  (load)='onchartload($event)'>
+    <e-seriescollection>
+        <e-series [dataSource]="MultiSelection1" xName="x" yName="y"  name='Product A' fill="#5cd65c"
+                       [marker.visible]="true" marker.shape='star'
+                       [marker.size.width]="15" [marker.size.height]="15"
+                      >
+        </e-series>
+		 <e-series [dataSource]="MultiSelection2" xName="x" yName="y" 
+		       name='Product B' fill='#FFD700'
+               marker.visible="true" marker.shape='triangle' [marker.size.width]="15" [marker.size.height]="15">
+        </e-series>
+    </e-seriescollection>
+</ej-chart>
+
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+     <div class="row">
+					 <table><tr>
+					 <td>Selection Type</td>
+					 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                     <td>
+                      <input id="selection" ej-dropdownlist #selection (select)="onchange1($event)" [selectedIndex]="0" [dataSource]="['xy', 'x', 'y']" width="100%" />
+                      </td></tr></table><br/>
+					  <table><br/><tr>
+					  <td>Chart Data in Grid</td></tr></table><br/>
+                      <table><tr>
+					  <td>Product A</td></tr>
+                      <tr><td><div id="ProductA" style="width:120px"></div></td></tr></table><br/>
+                      <table><tr><td>Product B</td></tr>
+					  <tr><td><div id="ProductB" style="width:120px"></div></td></tr></table>
+                     </div>
+
+</div>
+</div>
