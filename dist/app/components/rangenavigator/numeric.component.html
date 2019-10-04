@@ -1,0 +1,33 @@
+<div class="content-container-fluid">
+        <div class="row">
+            <div class="cols-sample-area">
+<div style="width:96% !important;position: relative;">
+ <div id="scrollcontent" style="position: relative; left: 36px;">
+<ej-rangenavigator style="display:block;" align="center" id="container_range2" [tooltipSettings]="rntooltip" enableDefferedUpdate="true" padding="15" (load)="onrnload($event)" [dataSource]="rangeData" xName="XValue" yName="YValue" [allowSnapping]="true"
+    selectedRangeSettings.start="100" padding="15" selectedRangeSettings.end="250" valueType="numeric" [isResponsive]="true" sizeSettings.height="120" (rangeChanged)="onchartloaded($event)">
+</ej-rangenavigator>
+</div>
+  <div id="container">
+    <ej-chart #chart id="chart" style="display:block;"  primaryXAxis.rangePadding="none"  primaryYAxis.labelFormat='${value}' [primaryYAxis.range.min]="60" [primaryYAxis.range.max]="160" [primaryYAxis.range.interval]="20" [crosshair.visible]="true"
+                     crosshair.type='trackball'
+                     crosshair.marker.shape='circle'
+                    [crosshair.marker.visible]="true" size.height="600" 
+				  (load)="onchartload($event)"
+                            size.height="400"
+                            [legend.visible]="true">
+	<e-seriescollection>
+	  <e-series   type='line'
+                                name='Product X'
+                                [enableAnimation]="true" [tooltip.visible]="true" tooltip.format="#point.x#  : ej.format(#point.y#,n2)"
+                                [border.width]="2"></e-series>
+	<e-series   type='line'
+                                name='Product Y'
+                                [enableAnimation]="true" [tooltip.visible]="true" tooltip.format="#point.x#  : ej.format(#point.y#,n2)"
+                                [border.width]="2"></e-series>
+	</e-seriescollection>
+</ej-chart>
+  </div>
+</div>
+</div>
+</div>
+</div>
