@@ -1,0 +1,29 @@
+<div class="category">
+	<ej-toolbar id="category-toolbar" width="100%" [isResponsive]="true">
+		<ul class="e-ul e-horizontal" *ngFor="let item of categoryList">
+			<li>
+				<button id={{item.name}} ej-button text={{item.name}} height="34" [showRoundedCorner]="true" (ejclick)="showParentRoutes($event, item.cItems)"></button>
+			</li>
+		</ul>
+	</ej-toolbar>
+</div>
+
+<div id="subCategoryToolbar" style="display:none;">
+	<ul class="e-ul e-horizontal" *ngFor="let item of parentRoutes;let last = last;">
+		<li>
+			<a [showRoundedCorner]="true" ej-button [text]="item.name" height="34" [routerLink]="item.path" routerLinkActive="e-active"></a>
+			<span [class]="'samplestatus' + ' ' + item.type" *ngIf="item.type"></span>
+		</li>
+		 <ngrepeat-last [isLast]="last"></ngrepeat-last>
+	</ul>
+</div>
+
+
+<div class="rootnav" [style.display]="divdisplay">
+	<div class="navigationbar" [style.display]="div">
+		<ej-toolbar id="category-child-toolbar" width="100%" [isResponsive]="true">
+			
+		</ej-toolbar>
+	</div>
+</div>
+

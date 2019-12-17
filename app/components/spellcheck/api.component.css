@@ -1,0 +1,11 @@
+.errorword {
+    color: red;
+}
+
+.highlighter {
+    color: blue;
+}
+
+#SpellCheck {
+    padding-bottom: 15px;
+}

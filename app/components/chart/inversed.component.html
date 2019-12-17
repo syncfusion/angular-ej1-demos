@@ -1,0 +1,19 @@
+<ej-chart id="open" style="display:block;" (load)="onchartload($event)" primaryXAxis.title.text="Years"
+                [primaryXAxis.majorGridLines.visible]="false"
+				primaryXAxis.intervalType='Years'
+				primaryYAxis.title.text="Exchange rate (INR per USD)"
+				[primaryYAxis.range.min]="34" [primaryYAxis.range.max]="60" [primaryYAxis.range.interval]="2"
+				[primaryYAxis.isInversed]="true"
+				title.text="Exchange rate"
+              size.height="600"
+			 [isResponsive]="true"
+            [legend.visible]="false">
+    <e-seriescollection>
+        <e-series [dataSource]="inversedData" xName="x" yName="y" 
+					[marker.visible]="true"
+                    type='line'
+					[tooltip.visible]="true"                  
+                    [enableAnimation]="true"
+                    [border.width]="2"></e-series>
+    </e-seriescollection>
+</ej-chart>

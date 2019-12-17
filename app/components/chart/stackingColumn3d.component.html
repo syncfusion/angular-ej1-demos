@@ -1,0 +1,25 @@
+<ej-chart id="stackingColumn3d100" style="display:block;" (load)="onchartload($event)" [primaryXAxis.range.min]="2005" [primaryXAxis.range.max]="2012" [primaryXAxis.range.interval]="1" 
+                [primaryXAxis.axisLine.visible]="false"
+                [primaryXAxis.majorGridLines.visible]="true" primaryXAxis.majorGridLines.color= "#a9a9a9" [primaryXAxis.majorGridLines.opacity]= "0.12"
+               [primaryYAxis.majorGridLines.visible]="true" primaryYAxis.majorGridLines.color="#a9a9a9" [primaryYAxis.majorGridLines.opacity]="0.12"
+			   commonSeriesOptions.type='stackingcolumn' [commonSeriesOptions.tooltip.visible]="true"
+			[enable3D]="true"		
+            [enableRotation]="true"
+            [depth]="100"
+            [wallSize]="2"
+            [tilt]="0"
+            [rotation]="34"
+            [perspectiveAngle]="90"
+            [sideBySideSeriesPlacement]="true"
+			load="loadTheme"            
+			title.text="Passenger Car Sales"
+			[isResponsive]="true"
+            size.height='600'
+            [legend.visible]="true">
+    <e-seriescollection>
+        <e-series name="India" stackingGroup='Asia Continent' [dataSource]="stackingColumn3dData1" xName="x" yName="y"></e-series>
+        <e-series name="China" stackingGroup='Asia Continent' [dataSource]="stackingColumn3dData2" xName="x" yName="y"></e-series>
+		<e-series name="Canada" stackingGroup='North America Continent' [dataSource]="stackingColumn3dData3" xName="x" yName="y"></e-series>
+		<e-series name="USA" stackingGroup='North America Continent' [dataSource]="stackingColumn3dData4" xName="x" yName="y"></e-series>
+    </e-seriescollection>
+</ej-chart>

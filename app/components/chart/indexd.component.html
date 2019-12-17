@@ -1,0 +1,32 @@
+<ej-chart #indexed id="indexed" style="display:block;" (load)="onchartload($event)" primaryYAxis.labelFormat="{value}$" primaryYAxis.title.text='Sales'
+                    primaryXAxis.title.text="Days"
+                    primaryXAxis.labelIntersectAction="trim"
+                    primaryXAxis.labelPlacement="betweenticks"
+                    [primaryXAxis.crosshairLabel.visible]="true"
+					[primaryXAxis.isIndexed]="true" [crosshair.visible]="true"
+                    crosshair.type="trackball"
+                [isResponsive]="true"
+				title.text="Weekly Products Sales Comparison"
+                [legend.visible]="true" legend.position='bottom'>
+    <e-seriescollection>
+        <e-series [dataSource]="indexedData1" xName="x" yName="y" 
+					name="Product X" opacity="0.8"></e-series>
+		<e-series [dataSource]="indexedData2" xName="x" yName="y" 
+					name="Product Y"></e-series>
+		<e-series [dataSource]="indexedData3" xName="x" yName="y" 
+					name="Product Z"></e-series>
+    </e-seriescollection>
+</ej-chart>
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+    <div class="row">
+			     <div class="col-md-3">
+                    Indexed 
+					</div>
+					<div class="col-md-3 aligntop">
+                     <ej-checkbox #index (ejchange)="onchange1($event)" [checked]="true"></ej-checkbox>					 
+                 </div>
+				 
+                 </div>  
+   </div>
+</div>

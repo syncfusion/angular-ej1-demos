@@ -1,0 +1,9 @@
+<ej-spreadsheet id="spreadsheet" scrollSettings.height="530" scrollSettings.width="100%" importSettings.importMapper="//js.syncfusion.com/demos/ejservices/api/Spreadsheet/Import" exportSettings.excelUrl="//js.syncfusion.com/demos/ejservices/api/Spreadsheet/ExcelExport" exportSettings.csvUrl="//js.syncfusion.com/demos/ejservices/api/Spreadsheet/CsvExport" exportSettings.pdfUrl="//js.syncfusion.com/demos/ejservices/api/Spreadsheet/PdfExport" (loadComplete)= loadComplete($event)>
+    <e-sheets>
+        <e-sheet [columnWidth]='150'>
+            <e-rangesettings>
+                <e-rangesetting [dataSource]="spreadData" startCell="A1" [headerStyles]="{'font-weight':'bold'}"></e-rangesetting>
+            </e-rangesettings>
+        </e-sheet>
+    </e-sheets>
+</ej-spreadsheet>
