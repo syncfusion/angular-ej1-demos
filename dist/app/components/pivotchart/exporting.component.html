@@ -1,0 +1,20 @@
+<ej-pivotchart id="PivotChart1" [dataSource.data]="data" [dataSource.rows]="rows" [dataSource.columns]="columns" [dataSource.values]="values"
+	[commonSeriesOptions]="commonSeriesOptions" [size]="size" [primaryYAxis]="primaryYAxis" [legend]="legend">
+</ej-pivotchart>
+<div id="property-window" class="box wide">
+    <div class="row">
+        <table width="300px">
+            <tr>
+                <td class="chkrad">
+                    Export Option :
+                </td>
+                <td class="chkrad" colspan="2">
+                    <input id="exportOptions" ej-dropdownlist  [dataSource]="exportOptions" [(value)]="value" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row" style="margin:20px 0px 10px 20px">
+        <input style="margin: 28px 0 0 50px; float: left" id="export" ej-button size="normal" (click)="ExportBtnClick($event)" value="Export" text="Export" />
+    </div>
+</div>

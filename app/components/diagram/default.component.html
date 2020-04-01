@@ -1,0 +1,72 @@
+<ej-diagram width="100%" height="600" [pageSettings]="pageSettings" [enableContextMenu]="enableContextMenu">
+	<e-nodes>
+            <e-node name ="NewIdea" type = "flow" [width]="150" [height]="60" [offsetX]="300" [offsetY]="60" fillColor="#1BA0E2" borderColor="#1BA0E2" 
+                 shape="terminator" >
+                <e-nodelabels>
+                    <e-nodelabel text="New Idea Identified" fontColor="white"></e-nodelabel>
+                </e-nodelabels>
+            </e-node>
+            <e-node name ="Meeting" type = "flow" shape="process" [width]="150" [height]="60" [offsetX]="300" [offsetY]="155" fillColor="#1BA0E2" borderColor="#1BA0E2">
+                <e-nodelabels>
+                    <e-nodelabel text="Meeting with board" fontColor="white"></e-nodelabel>
+                </e-nodelabels>
+            </e-node>
+            <e-node name ="BoardDecision" type = "flow" shape="decision" [width]="150" [height]="110" [offsetX]="300" [offsetY]="280" fillColor="#1BA0E2" borderColor="#1BA0E2">                 
+                <e-nodelabels>
+                    <e-nodelabel text="Board decides whether to proceed" [margin]="margin" fontColor="white">                        
+                    </e-nodelabel>
+                </e-nodelabels>
+            </e-node>
+            <e-node name ="Project" type = "flow" shape="decision" [width]="140" [height]="100" [offsetX]="300" [offsetY]="430" fillColor="#1BA0E2" borderColor="#1BA0E2">                 
+                 <e-nodelabels>
+                    <e-nodelabel text="Find Project manager" [margin]="margin" fontColor="white"></e-nodelabel>
+                </e-nodelabels>
+            </e-node>
+            <e-node name ="End" type = "flow" shape="process" [width]="150" [height]="60" [offsetX]="300" [offsetY]="555" fillColor="#1BA0E2" borderColor="#1BA0E2">
+                <e-nodelabels>
+                    <e-nodelabel text="Implement and Deliver" fontColor="white"></e-nodelabel>
+                </e-nodelabels>
+            </e-node>
+            <e-node name ="Decision" type = "flow"  shape="card" [width]="250" [height]="60" [offsetX]="550" [offsetY]="60" fillColor="#858585" borderColor="#1BA0E2">                   
+                 <e-nodelabels>
+                    <e-nodelabel text="Decision Process for new software ideas" fontColor="white"></e-nodelabel>
+                </e-nodelabels>
+            </e-node>
+            <e-node name ="Reject" type = "flow"  shape="process" [width]="150" [height]="60" [offsetX]="550" [offsetY]="280" fillColor="#1BA0E2" borderColor="#1BA0E2">
+                <e-nodelabels>
+                    <e-nodelabel text="Reject and write report" fontColor="white"></e-nodelabel>
+                </e-nodelabels>
+            </e-node>
+            <e-node name ="Resources" type = "flow"  shape="process" [width]="150" [height]="60" [offsetX]="550" [offsetY]="430" fillColor="#1BA0E2" borderColor="#1BA0E2">
+                <e-nodelabels>
+                    <e-nodelabel text="Hire new resources" fontColor="white"></e-nodelabel>
+                </e-nodelabels>
+            </e-node>
+        </e-nodes>
+         <e-connectors>
+            <e-connector name="Connector1" sourceNode="NewIdea" targetNode="Meeting" lineColor="#606060">
+            </e-connector>
+            <e-connector name="Connector2" sourceNode="Meeting" targetNode="BoardDecision" lineColor="#606060">
+            </e-connector>
+          <e-connector name="Connector3" sourceNode="BoardDecision" targetNode="Reject" lineColor="#606060">   
+                <e-connectorlabels>
+                    <e-connectorlabel text="No" fillColor="white"></e-connectorlabel>
+                </e-connectorlabels>
+            </e-connector>
+            <e-connector name="Connector4" sourceNode="BoardDecision" targetNode="Project" lineColor="#606060">
+                <e-connectorlabels>
+                    <e-connectorlabel text="Yes" fillColor="white"></e-connectorlabel>
+                </e-connectorlabels>
+            </e-connector>
+            <e-connector name="Connector5" sourceNode="Project" targetNode="Resources" lineColor="#606060">              
+                <e-connectorlabels>
+                    <e-connectorlabel text="No" fillColor="white"></e-connectorlabel>
+                </e-connectorlabels>
+            </e-connector>
+            <e-connector name="Connector6" sourceNode="Project" targetNode="End" lineColor="#606060">   
+                <e-connectorlabels>
+                    <e-connectorlabel text="Yes" fillColor="white"></e-connectorlabel>
+                </e-connectorlabels>
+            </e-connector>
+        </e-connectors>
+		</ej-diagram>
