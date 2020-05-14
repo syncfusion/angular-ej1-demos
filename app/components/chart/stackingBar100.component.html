@@ -1,0 +1,15 @@
+<ej-chart id="spline" style="display:block;" (load)="onchartload($event)" [primaryXAxis.range.min]="2006" [primaryXAxis.range.max]="2015" [primaryXAxis.range.interval]="1" primaryYAxis.title.text='Sales Percentage(%)' primaryXAxis.title.text='Year'  commonSeriesOptions.type='stackingbar100' [commonSeriesOptions.enableAnimation]="true" [commonSeriesOptions.tooltip.visible]="true" 
+				commonSeriesOptions.tooltip.format=" #series.name# <br/> X :  #point.x# <br/> Y :  #point.y#  <br/>Percentage :  #point.percentage# %" title.text='Sales by year'                         
+            size.height="600"
+            [legend.visible]="true" legend.position='right' legend.alignment="near" >
+    <e-seriescollection>
+      <e-series [dataSource]="stackingBar100Data1" xName="x" yName="y" name='Andrew'
+					fill='#1ABC9C' ></e-series>
+	 <e-series [dataSource]="stackingBar100Data2" xName="x" yName="y" name='India'
+					fill='#3498DB' ></e-series>
+	 <e-series [dataSource]="stackingBar100Data3" xName="x" yName="y" name='Thomas'
+					fill='#34495E' ></e-series>
+	<e-series [dataSource]="stackingBar100Data4" xName="x" yName="y" name='Hendry'
+					fill='#00FFFF' ></e-series>
+	</e-seriescollection>
+</ej-chart>

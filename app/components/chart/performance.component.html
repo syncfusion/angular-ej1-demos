@@ -1,0 +1,27 @@
+<ej-chart #performance id="performance" style="display:block;" [primaryXAxis.majorGridLines.visible]="false" commonSeriesOptions.type='line'
+			[commonSeriesOptions.enableAnimation]="false" [enableCanvasRendering]="true"
+            [isResponsive]="true"
+            [legend.visible]="false">
+    <e-seriescollection>
+        <e-series name='Series1'
+					fill="#369EAD">
+        </e-series>
+    </e-seriescollection>
+</ej-chart>
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+   <div class="row">
+                        <div class="col-md-3">         
+							<input ej-button #btnSubmit type="button" name="Export" value="Load 100K Points" (click)="buttonclickevent($event)" />
+                        </div>
+						<br/>
+						<br/>
+						<div class="col-md-3">
+                           Time taken
+                        </div>
+                        <div class="col-md-3">         
+							<span id="timeTaken">0 ms</span>
+						</div>
+                    </div> 
+</div>
+</div>
