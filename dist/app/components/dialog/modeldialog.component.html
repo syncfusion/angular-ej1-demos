@@ -1,0 +1,52 @@
+<div id="parent" style="height:500px; position:relative; overflow:hidden;">
+    <input id="btnOpen" style="display:none; height: 30px" type="button" class="ejinputtext" value="Click to open Dialog" (click)="onClick($event)"
+    />
+    <ej-dialog id="lognForm" title="Login Form" [enableModal]="true" [enableResize]="false" width="291" minWidth="310" minHeight="215"
+        containment="#parent" (close)="onClose()">
+        <table style="width:100%;">
+            <tr>
+                <td>
+                    <p class="top">Please enter your username and password
+                        <p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Username
+                    <p class="reqired">*</p>
+                    <input type="text" id="txtName" class="ejinputtext model" required /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password
+                    <p class="reqired">*</p>
+                    <input type="password" id="txtPassword" class="ejinputtext model" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ej-checkbox type="checkbox" text="Remember me" id="txtRember" required></ej-checkbox>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <br />
+
+                    <button id="btnlogin" class="e-btn" ej-button text="LOGIN" size="medium" type="submit" height="30" width="150"></button>
+
+                </td>
+            </tr>
+            <tr>
+                <td align="center" class="acc">
+                    Don't have an account ? <a href="#/dialog/model-dialog">Signup</a>
+                </td>
+            </tr>
+        </table>
+    </ej-dialog>
+	<style>
+	#lognForm{
+	display:block;
+	}
+	</style>
+</div>
