@@ -1,0 +1,8 @@
+<div style="float: left;">
+	<span>Select a Country</span>
+	<input id="countrylist" type="text" ej-combobox [dataSource]="country" [fields]="countryField" (ejchange)="countryChange($event)" />
+</div>
+<div style="float: right;">
+	<span>Select a State</span>
+	<input id="stateList" type="text" ej-combobox [dataSource]="state" [fields]="stateField" [enabled]="false" />
+</div>

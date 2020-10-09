@@ -1,0 +1,129 @@
+<div class="stockanalysis" (window:resize)="onResize($event)">
+    <div class="stockheader">
+        <div #sampletitleElement class="sampletitle container">
+            <div class="sampleimg">
+                <div class="leftHeader">
+                    <img src="../../content/images/showcase/stock_logo.png" class="stockImg" />
+                    <label class="stockheaderimgLabel" [style.font-size]="imgLabelfontsize">STOCK ANALYSIS</label>
+                    <div align="center" class="tile" [style.display]="tileimagedisplay" (click)="tileclick($event)">
+                        <img src="../../content/images/showcase/tile.png" class="stockImg" />
+                    </div>
+                </div>
+
+                <div class="ownerdetails" [style.display]="ownerdetailsdisplay">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="../../content/images/showcase/person.png" class="ownerImg" />
+                            </td>
+                            <td class="ownname">Andrew Fuller<br />
+                                <span>My Watch List</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="container">
+            <div class="chartdetail">
+                <div #stockstatusElement class="stockstatus" [style.display]="stockstatusdisplay">
+                    <div class="row" [style.padding-left.px]="stockstatuspadding">
+                        <div *ngFor="let stock of stockdetails" style="float:left;" cellspacing="0.1em" align="center">
+                            <div id="{{stock.id}}" class="ptiles col-xs-2" (click)="stockclick($event, stock)">
+                                <div>
+                                    <table class="titletab" cellspacing="0.1em">
+                                        <tr>
+                                            <td>
+                                                <span class="ptext">{{stock.title}}</span>
+                                            </td>
+                                            <td id="{{stock.popupid}}">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="{{stock.range}}">{{stock.value}}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="{{stock.status}}">
+                                                    <div class="{{stock.arrow}}"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="high high_low">
+                                                <div class="higharrow arrow">
+                                                    <span>{{stock.high}}</span>
+                                                </div>
+                                            </td>
+                                            <td class="low high_low">
+                                                <div class="lowarrow arrow">
+                                                    <span>{{stock.low}}</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <ej-waitingpopup #stockdetailsPopup id="stockdetailsPopupid" [showOnInit]="false"></ej-waitingpopup>
+                    </div>
+                </div>
+                <div class="chartwrapper">
+                    <div class="stockdetails">
+                        <div class="row" align="center">
+                            <div>
+                                <div id="hilochart" *ngIf="hilochartPopup">
+                                    <ej-waitingpopup style="display:block;" id="hilopopup" [showOnInit]="true" [target]="hiloOpenClose"></ej-waitingpopup>
+                                </div>
+                                <ej-chart #hilochart id="hiloOpenClose" (load)="hilochartload($event)" chartArea.border.color="transparent" primaryXAxis.labelFormat="MMM/yy"
+                                    primaryXAxis.valueType="datetime" [primaryYAxis.range.min]=0 [primaryYAxis.range.max]=800
+                                    [primaryXAxis.majorGridLines.visible]="false" [primaryXAxis.majorTickLines.visible]="false"
+                                    [primaryYAxis.majorTickLines.visible]="false" [primaryYAxis.majorGridLines.visible]="true"
+                                    primaryXAxis.rangePadding="none" [legend.visible]="false" size.height="300" [commonSeriesOptions.tooltip.visible]="true"
+                                    [margin.right]="20" primaryYAxis.font.color="transparent" background="transparent" primaryYAxis.rangePadding="none"
+                                    [primaryYAxis.axisLine.visible]="false" [isResponsive]="hilochartResponsive" [primaryYAxis.range.interval]=200
+                                    [title.font]="hilochartTitleFont" title.textAlignment="far" title.text="GOOG" >
+                                    <e-seriescollection>
+                                        <e-series name="Bank" type="hiloopenclose" high="High" low="Low" open="Open" close="Close" [border.width]=1 tooltip.template="Tooltip">
+                                        </e-series>
+                                    </e-seriescollection>
+                                </ej-chart>
+                            </div>
+                            <div>
+                                <ej-chart #columnchart id="colChart" primaryXAxis.intervalType="years" primaryXAxis.labelFormat="yyyy" [primaryXAxis.range.interval]=1
+                                    [primaryYAxis.range.interval]=100 [primaryYAxis.range.min]=100 [primaryXAxis.range]="colchartXAxisrange"
+                                    [primaryYAxis.range.max]=800 [primaryXAxis.majorGridLines.visible]="false" [primaryXAxis.majorTickLines.visible]="false"
+                                    primaryXAxis.valueType="datetime" [primaryYAxis.axisLine.visible]="false" [primaryYAxis.majorTickLines.visible]="false"
+                                    primaryYAxis.rangePadding="none" size.height="250" (load)="colchartload($event)" [legend.visible]="false"
+                                    background="transparent" [isResponsive]=true >
+                                    <e-seriescollection>
+                                        <e-series name="Gold" type="column" fill="#ba4558" [enableAnimation]="true" xName="xName" yName="yName" [dataSource]="colchartData">
+                                        </e-series>
+                                        <e-series name="Silver" type="column" fill="#1d9059" [enableAnimation]="true" xName="xName" yName="yName" [dataSource]="colchartData">
+                                        </e-series>
+                                    </e-seriescollection>
+                                </ej-chart>
+                            </div>
+                            <div class="years">
+                                <div *ngFor="let year of colchartyears" class="yearlabel" style="float:left">
+                                    <label id="{{year.id}}" class="changeyear" (click)="yearclick(year.id)">{{year.id}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div id="Tooltip" style="display:none;">
+    <table bgcolor="transparent">
+        <tr *ngFor="let points of tooltippoint">
+            <td>{{points.date}}</td>
+            <td class="vpoints">{{points.point}}</td>
+        </tr>
+    </table>
+</div>

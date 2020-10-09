@@ -1,0 +1,151 @@
+/*controls*/
+        .e-tooltxt .mailtools {
+            background-image: url('app/content/images/toolbar/maild.png');
+        }
+
+        #toolbar .e-tooltxt .mailtools {
+            display: block;
+            background-image: url('app/content/images/toolbar/maill.png');
+            height: 24px;
+            width: 24px;
+            background-repeat: no-repeat;
+        }
+
+        .e-tooltxt:hover .mailtools, .darktheme .cols-sample-area .e-tooltxt:hover .mailtools {
+            background-image: url('app/content/images/toolbar/mailh.png');
+        }
+
+        #toolbar .mailtools.done {
+            background-position: -11px -140px;
+        }
+
+        #toolbar .mailtools.movetofolder {
+            background-position: -12px -40px;
+        }
+
+        #toolbar .mailtools.categorize {
+            background-position: -14px -248px;
+        }
+
+        #toolbar .mailtools.flag {
+            background-position: -13px -282px;
+        }
+
+        #toolbar .mailtools.forward {
+            background-position: -14px -314px;
+        }
+
+        #toolbar .mailtools.newmail {
+            background-position: -14px -348px;
+        }
+
+        #toolbar .mailtools.reply {
+            background-position: -14px -388px;
+        }
+
+        /***/
+        .frame {
+            height: 280px;
+            width: 695px;
+            border-radius: none;
+            margin-left: 0;
+            margin-top: 40px;
+            padding: 0;
+        }
+
+        .control {
+            margin: 120px 200px 0;
+        }
+ 
+       .e-tooltxt .editTools {
+            background-image: url('app/content/images/toolbar/editToolbar.png');
+        }
+
+        .e-tooltxt .editTools {
+            display: block;
+            background-image: url('app/content/images/toolbar/editToolbarl.png');
+            height: 26px;
+            width: 26px;
+            background-repeat: no-repeat;
+        }
+
+        .e-tooltxt:hover .editTools, .e-tooltxt:hover .editTools {
+            background-image: url('app/content/images/toolbar/editToolbarh.png');
+        }
+
+        .editTools.cursor {
+            background-position: -0px -0px;
+        }
+
+        .editTools.select {
+            background-position: -0px -36px;
+        }
+
+        .editTools.move {
+            background-position: -0px -72px;
+        }
+
+        .editTools.rectselect {
+            background-position: -0px -108px;
+        }
+
+        .editTools.roundselect {
+            background-position: -0px -144px;
+        }
+
+        .editTools.brush {
+            background-position: -0px -180px;
+        }
+
+        .editTools.pen {
+            background-position: -0px -216px;
+        }
+
+        .editTools.gradient {
+            background-position: -0px -252px;
+        }
+
+        .editTools.crop {
+            background-position: -0px -288px;
+        }
+
+        .editTools.symbols {
+            background-position: -0px -324px;
+        }
+
+    #toolbarJson .e-tooltxt .Browsers {
+            background-image: url('app/content/images/toolbar/browserd.png');
+        }
+
+        #toolbarJson .e-tooltxt .Browsers {
+            display: block;
+            background-image: url('app/content/images/toolbar/browserl.png');
+            height: 32px;
+            width: 32px;
+            background-repeat: no-repeat;
+        }
+
+        .e-tooltxt:hover .Browsers, .darktheme .cols-sample-area .e-tooltxt:hover .Browsers {
+            background-image: url('app/content/images/toolbar/browserh.png');
+        }
+
+        .Browsers.ieb {
+            background-position: -84px 0px;
+        }
+
+        .Browsers.chromeb {
+            background-position: -42px 0px;
+        }
+
+        .Browsers.firefoxb {
+            background-position: 0px 0px;
+        }
+
+        .Browsers.bittyb {
+            background-position: -126px 0px;
+        }
+
+        .Browsers.operab {
+            background-position: -168px 0px;
+        }
+

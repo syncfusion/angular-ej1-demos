@@ -1,0 +1,34 @@
+<ej-chart #spline id="spline" style="display:block;" (load)="onchartload($event)" primaryXAxis.title.text='Month' [primaryYAxis.range.min]="-5" [primaryYAxis.range.max]="35" [primaryYAxis.range.interval]="5"
+                primaryYAxis.title.text="Temperature in Celsius"
+                primaryYAxis.labelFormat="{value}C" commonSeriesOptions.type='spline' commonSeriesOptions.splineType='natural'
+				[commonSeriesOptions.enableAnimation]="true"
+                commonSeriesOptions.marker.shape='circle'
+                [commonSeriesOptions.marker.visible]="true"                            
+				[commonSeriesOptions.tooltip.visible]="true" commonSeriesOptions.tooltip.format="#point.x# <br/> #series.name# : #point.y#"  title.text='Climate Graph-2012'>
+    <e-seriescollection>
+      <e-series name="India" [dataSource]="splineData1" xName="x" yName="y"></e-series>
+        <e-series name="Germany" [dataSource]="splineData2" xName="x" yName="y"></e-series>
+        <e-series name="England" [dataSource]="splineData3" xName="x" yName="y"></e-series>
+	</e-seriescollection>
+</ej-chart>
+
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+      <div class="row">
+		<div class="col-md-3">
+             Spline Type
+        </div>
+        <div class="col-md-3">           
+			<input id="splineMode" ej-dropdownlist #splineMode (select)="onChange1($event)" [selectedIndex]="0" [dataSource]="['natural', 'monotonic', 'cardinal','clamped']" width="100%" />
+        </div>
+	  </div><br><br>
+	  <div class="row">
+		<div class="col-md-3">
+             CardinalSpline Tension
+        </div>
+    <div class="col-md-3">
+      <input type="number" style="width:90px;height:18px" id="tension" (change)= "onChange2($event.target.value)" />
+    </div>
+	  </div>
+	</div>
+</div>

@@ -1,0 +1,103 @@
+<div class="content-container-fluid">
+        <div class="row">
+            <div class="cols-sample-area" align="center">
+                <div id="circularframe">
+                    <div id="CoreCircularGauge">
+                            <ej-circulargauge #gauge backgroundcolor="transparent" (drawCustomLabel)="ondrawCustomLabel($event)" radius="100" value="55" width="400" [readOnly]="false" [enableAnimation]="false" [frame]="frame">
+    <e-scales>
+        <e-scale [showRanges]="true" [startAngle]="180" [sweepAngle]="180" [majorIntervalValue]="100" [customLabels]="customLabels">
+             <e-ranges>
+                <e-range size="40" startValue="0" endValue="50" backgroundColor="#1B4279" border.color="#1B4279">
+                </e-range>
+                <e-range size="40" startValue="50" endValue="100" backgroundColor="#91B8F3" border.color='#91B8F3'>
+                </e-range>
+             </e-ranges>
+
+             <e-pointers>
+                <e-pointer type="marker" markerType="diamond" [distanceFromScale]="10" backgroundColor="black" [length]="20" [width]="40" [pointerValueText]="pointerText">
+                </e-pointer>
+            </e-pointers>
+            <e-ticks>
+                <e-tick height="0" width="0"></e-tick>
+            </e-ticks>
+           
+        </e-scale>
+    </e-scales>
+</ej-circulargauge>
+                    </div>
+                </div>
+            </div>
+            <div id="property-window" class="box wide">
+                <div class="prop-grid">
+                    <div class="row">
+                        <div class="col-md-3">
+                            Pointer Length
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <div id="">
+                                <ej-slider #pointerWidth id="pointerWidth" [sliderType]="minRange"  [value]="40" [height]="20" [width]="110" [minValue]="10" [maxValue]="40" [enableAnimation]="true" (slide)="onchange($event)" (ejchange)="onchange($event)"></ej-slider>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            Pointer Width
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <div id="">
+                                <ej-slider #pointerWidth id="pointerLength" [sliderType]="minRange"  [value]="20" [height]="20" [width]="110" [minValue]="5" [maxValue]="35" [enableAnimation]="true" (slide)="onchange($event)" (ejchange)="onchange($event)"></ej-slider>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Distance From Scale
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <div id="">
+                                <ej-slider #distanceFromScale id="distanceFromScale" [sliderType]="minRange"  [value]="10" [height]="20" [width]="110" [minValue]="-50" [maxValue]="100" [enableAnimation]="true" (slide)="onchange($event)" (ejchange)="onchange($event)"></ej-slider>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            Animation Speed
+                        </div>
+                        <div class="col-md-3">
+                            <div id="animationSpeed">
+                                <ej-slider #animationSpeed id="animationSpeed" [sliderType]="minRange"  [value]="500" [height]="20" [width]="110" [minValue]="100" [maxValue]="1000" [enabled]="false" [enableAnimation]="true" (ejchange)="onchange($event)"></ej-slider>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Enable Animation
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <ej-checkbox #chkEnableAnimation value="LabelAutoAngle" (ejchange)="onchange($event)" [checked]="false"></ej-checkbox>
+                        </div>
+
+                        <div class="col-md-3">
+                            Pointer Value
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <div id="">
+                                <ej-slider #pointerValue id="pointerValue" [sliderType]="minRange"  [value]="55" [height]="20" [width]="110" [minValue]="0" [maxValue]="100" [enableAnimation]="true" (ejchange)="onchange($event)"></ej-slider>
+                            </div>
+                        </div>
+
+                    </div><br/>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Marker Type
+                        </div>
+                        <div class="col-md-3">
+                            <input id="markerType" ej-dropdownlist #markerType (select)="onchange($event)" [selectedIndex]="3" [dataSource]="data" width="100%" />
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

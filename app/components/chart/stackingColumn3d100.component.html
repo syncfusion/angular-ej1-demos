@@ -1,0 +1,25 @@
+<ej-chart id="stackingColumn3d100" style="display:block;" (load)="onchartload($event)" [primaryXAxis.range.min]="2005" [primaryXAxis.range.max]="2012" [primaryXAxis.range.interval]="1" primaryXAxis.title.text="Year"
+                [primaryXAxis.axisLine.visible]="false"
+                [primaryXAxis.majorGridLines.visible]="true" primaryXAxis.majorGridLines.color= "#a9a9a9" [primaryXAxis.majorGridLines.opacity]= "0.12"
+               [primaryYAxis.majorGridLines.visible]="true" primaryYAxis.majorGridLines.color="#a9a9a9" [primaryYAxis.majorGridLines.opacity]="0.12"
+			   commonSeriesOptions.type='stackingcolumn100' [commonSeriesOptions.tooltip.visible]="true"
+			[enable3D]="true"		
+            [enableRotation]="true"
+            [depth]="100"
+            [wallSize]="2"
+            [tilt]="0"
+            [rotation]="34"
+            [perspectiveAngle]="90"
+            [sideBySideSeriesPlacement]="true"
+			load="loadTheme"            
+			title.text="Smartphone Penetration in Asia"
+			[isResponsive]="true"
+            size.height='600'
+            [legend.visible]="true">
+    <e-seriescollection>
+        <e-series name="India" [dataSource]="stackingColumn3d100Data" xName="xName" yName="yName"></e-series>
+        <e-series name="China" [dataSource]="stackingColumn3d100Data" xName="xName" yName="yName1"></e-series>
+		<e-series name="Japan" [dataSource]="stackingColumn3d100Data" xName="xName" yName="yName2"></e-series>
+		<e-series name="Pakistan" [dataSource]="stackingColumn3d100Data" xName="xName" yName="yName3"></e-series>
+    </e-seriescollection>
+</ej-chart>

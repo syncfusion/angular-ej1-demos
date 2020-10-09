@@ -1,0 +1,11 @@
+ej-pivotchart {
+    display: block;
+    height: 500px;
+    width: 100%; 
+}
+.e-pivotchart{
+    position: inherit !important;
+}
+.e-ddl {
+    margin: -25px 0 0 100px;
+}
