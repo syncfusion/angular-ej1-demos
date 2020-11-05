@@ -1,0 +1,65 @@
+<ej-chart #title id="title" style="display:block;" (load)="onchartload($event)" primaryXAxis.title.text="List of countries which are using solar power in the year 2014" [primaryXAxis.title.enableTrim]="true"
+			 [primaryXAxis.title.maximumTitleWidth]="60" primaryYAxis.title.text="Measurements of Solar power used in different countries in the year 2014( in GW)"
+			[primaryYAxis.title.enableTrim]="true"
+			[primaryYAxis.title.maximumTitleWidth]="110"
+			 [primaryYAxis.range.min]="0" [primaryYAxis.range.max]="40" [primaryYAxis.range.interval]="5"
+			primaryYAxis.labelFormat="{value}GW" [commonSeriesOptions.tooltip.visible]="true" commonSeriesOptions.tooltip.format=" Date : #point.x#  <br/> Profit : #point.y#" [isResponsive]="true"
+			title.text="Top 10 countries using solar power"
+            [legend.visible]="true">
+    <e-seriescollection>
+        <e-series [dataSource]="titleData"
+					xName="x"
+					yName="y"
+					name='Countries Using Solar Power'
+					type='column' 
+					[enableAnimation]="false"></e-series>
+	</e-seriescollection>
+</ej-chart>
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+   	    <div class="row">
+					 
+						<div class="col-md-3">
+                           Select Axis
+                        </div>								 
+                        <div class="col-md-3">
+				<input id="axis" ej-dropdownlist #axis (select)="onchange($event)" [selectedIndex]="0" [dataSource]="['XAxis', 'YAxis']" width="100%" />
+                        </div>
+					   <div class="col-md-3">
+					     Maximum Title Width
+                        </div>
+                        <div class="col-md-3">
+					 <input id="xmaxTitleWidth" type="text" ej-numerictextbox #xmaxTitleWidth value="60" (ejchange)="onchange($event)" width="100%" />   
+                        </div></div>
+						<br>
+						<div class="row">
+                        <div class="col-md-3">
+                             Enable Trim
+                        </div>								 
+                        <div class="col-md-3">
+				<input id="enabletrim" ej-dropdownlist #enabletrim (select)="onchange($event)" [selectedIndex]="0" [dataSource]="['True', 'False']" width="100%" />
+                        </div>
+						
+						<div class="col-md-3">
+						  Alignment
+                        </div>                       
+                        <div class="col-md-3">
+				<input id="alignment" ej-dropdownlist #alignment (select)="onchange($event)" [selectedIndex]="0" [dataSource]="['Center', 'Near','Far']" width="100%" />
+                        </div>	</div>
+						<br/><div class="row">
+						<div class="col-md-3">
+						  Position
+                        </div>                       
+                        <div class="col-md-3">
+					<input id="position" ej-dropdownlist #position (select)="onchange($event)" [selectedIndex]="0" [dataSource]="['Outside', 'Inside']" width="100%" />
+                        </div>	
+						
+						<div class="col-md-3">
+						  Offset
+                        </div>                       
+                        <div class="col-md-3">
+        <input id="offset" type="text" ej-numerictextbox #offset value="0" (ejchange)="onchange($event)" width="100%" />  						
+                        </div>							
+			</div>						
+</div>
+</div>
