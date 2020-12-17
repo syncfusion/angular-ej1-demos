@@ -1,0 +1,41 @@
+<style>
+    .control_section {
+        height: 600px;
+        background-color: transparent;
+    }
+
+    .diagram_section {
+        width: calc(100% - 255px);
+        height: 100%;
+        float: left;
+    }
+
+    .middle_section {
+        float: left;
+        width: 5px;
+        height: 100%;
+    }
+
+    .symPalette_section {
+        width: 250px;
+        height: 100%;
+        float: left;
+    }
+    #symbolpalette{
+        display: inline-block;
+    }
+</style>
+
+<div class="cols-sample-area" align="center">
+    <div class="control_section">
+        <div class="symPalette_section">
+            <ej-symbolpalette   id="symbolpalette" diagramId="diagramCore" [palettes]="palettes" height="600px" width="250px" [paletteItemWidth]="50" [paletteItemHeight]="50" [previewWidth]="100" [previewHeight]="100" [showPaletteItemText]="showPaletteItemText">
+            </ej-symbolpalette>
+        </div>
+        <div class="middle_section"></div>
+        <div class="diagram_section">
+            <ej-diagram id="diagramCore" width="100%" height="100%" [pageSettings]="pageSettings" [nodes]="nodes" [connectors]="connectors" >
+            </ej-diagram>
+        </div>
+    </div>
+</div>

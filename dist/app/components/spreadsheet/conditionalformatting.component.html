@@ -1,0 +1,10 @@
+
+<ej-spreadsheet id="spreadsheet" scrollSettings.height="530" scrollSettings.width="100%" [showRibbon] ="false" [enableContextMenu]="false" [allowFormulaBar]="false" (loadComplete)= loadComplete($event)>
+    <e-sheets>
+        <e-sheet>
+            <e-rangesettings>
+                <e-rangesetting [dataSource]="spreadData" startCell="A1" [headerStyles]="{'font-weight':'bold'}" [showHeader]="false"></e-rangesetting>
+            </e-rangesettings>
+        </e-sheet>
+    </e-sheets>
+</ej-spreadsheet>

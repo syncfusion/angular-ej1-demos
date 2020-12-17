@@ -1,0 +1,37 @@
+<ej-chart #pieofpie id="pieofpie" style="display:block;" [legend.visible]="true" title.text="Expenditures" title.text='Oil and other liquid imports in USA' title.subTitle.text='In the year 2014 - 2015'		
+            [isResponsive]="true"
+            size.height="600">
+    <e-seriescollection>
+        <e-series type="pieofpie" name="Oil Import" [dataSource]="chartData" xName="x" yName="y" [splitValue]="10" [gapWidth]="100" [pieCoefficient]="1" [pieOfPieCoefficient]="0.8" [connectorLine.width]="2" connectorLine.dashArray="2,2" labelPosition="inside" [enableSmartLabels]="true" [marker]="marker" [enableAnimation]="true">
+        </e-series>
+    </e-seriescollection>
+</ej-chart>
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+      <div class="row">
+	      <div class="row">
+                        <div class="col-md-3">
+                            Split Mode
+                        </div>
+                        <div class="col-md-3">           
+					<input id="splitMode" ej-dropdownlist #splitMode (select)="onChange1($event)" [selectedIndex]="0" [dataSource]="['Value', 'Percentage', 'Position','Percentage','Indexes']" width="100%" />
+                        </div>						
+						<div class="col-md-3">
+                           Split Value
+                        </div>
+                        <div class="col-md-3">
+						    <input style="width:90px;height:18px" id="splitValue" type="text" ej-numerictextbox #spilitValue  value="10" (ejchange)="onChange2($event)"/>
+                        </div>
+					</div>
+					<br/>
+					<div class="row">
+						<div class="col-md-3">
+                           Gap Width
+                        </div>
+                        <div class="col-md-3">
+							<input style="width:90px;height:18px" id="gapWidth" type="text" ej-numerictextbox  value="100" (ejchange)="onChange3($event)"/>
+                        </div>
+                    </div> 
+	  </div>
+	</div>
+</div>

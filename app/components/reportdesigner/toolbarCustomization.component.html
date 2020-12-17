@@ -1,0 +1,13 @@
+<ej-reportviewer id="rpt_toolbar_viewer"
+    [reportServiceUrl] ="serviceUrl"
+    [processingMode] ="Remote"
+    [reportPath] ="reportPath"
+    [reportServerUrl] = "serverUrl"
+    (toolbarRendering) = "renderViewerToolbar($event)">
+</ej-reportviewer>
+<ej-reportdesigner id="rpt_toolbar_designer"
+    [serviceUrl] = "serviceUrl" 
+    [toolbarSettings] = "this.toolBarSettings"
+    (create) = "designerInitialized($event)"
+    (toolbarRendering) = "renderDesignerToolbar($event)">
+</ej-reportdesigner>
