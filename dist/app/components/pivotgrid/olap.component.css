@@ -1,9 +1,0 @@
-ej-pivotgrid {
-    display: block;
-    height: 350px;
-    width: 100%; 
-    overflow: auto;
-}
-.e-pivotgrid{
-    position: inherit !important;
-}
