@@ -28,7 +28,7 @@
     "reflect-metadata": "^0.1.10",
     "rxjs": "5.5.2",
     "zone.js": "^0.8.4",
-    "jquery-validation": "^1.16.0",
+    "jquery-validation": "^1.19.3",
     "bootstrap": "^3.3.6",
     "ej-angular2": "^16.3.21",
     "syncfusion-javascript": "^16.3.21",
