@@ -1,0 +1,110 @@
+<ej-chart #smartAxis id="smartAxis" style="display:block;" (load)="onchartload($event)" primaryXAxis.title.text='Countries'
+               primaryXAxis.labelIntersectAction='multiplerows' [primaryYAxis.range.min]="0" [primaryYAxis.range.max]="80" [primaryYAxis.range.interval]="5" primaryYAxis.title.text="People (in millions)" commonSeriesOptions.type='column'
+				[commonSeriesOptions.enableAnimation]="true" 
+				[commonSeriesOptions.tooltip.visible]="true" title.text='Internet users'
+            [isResponsive]="true"
+            [legend.visible]="false">
+    <e-seriescollection>
+        <e-series [dataSource]="SmartAxisData" xName="x" yName="y" name='Countries'
+                ></e-series>
+	</e-seriescollection>
+</ej-chart>
+
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+   	<div class="row">
+							<div class="col-md-3">
+								<b>X-Axis</b>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								 Edge Label Placement
+							</div>
+							<div class="col-md-3 aligntop">
+	<input id="edgeLabelX" ej-dropdownlist #edgeLabelX (select)="onchange1($event)" [selectedIndex]="0" [dataSource]="['None', 'Shift', 'Hide']" width="100%" />
+							</div>
+						<div class="col-md-3">
+								  Label Intersect Action
+							</div>
+							<div class="col-md-3 aligntop">
+		<input id="optXaxisChange" ej-dropdownlist #optXaxisChange (select)="onchange2($event)" [selectedIndex]="0" [dataSource]="['Rotate45', 'Rotate90', 'Wrap','WrapByWord','Trim','Hide','MultipleRows','None']" width="100%" />
+							</div>
+						</div><br/>
+						<div class="row">
+							<div class="col-md-3">
+								   Tick Lines Position
+							</div>
+							<div class="col-md-3 aligntop">
+	 <input id="xticklines" ej-dropdownlist #xticklines (select)="onchange3($event)" [selectedIndex]="0" [dataSource]="['Outside', 'Inside']" width="100%" />
+							</div>
+						<div class="col-md-3">
+								   Label Position
+							</div>
+							<div class="col-md-3 aligntop">
+		 <input id="xlabels" ej-dropdownlist #xlabels (select)="onchange4($event)" [selectedIndex]="0" [dataSource]="['Outside', 'Inside']" width="100%" />
+							</div>
+						</div><br/>
+						<div class="row">
+							<div class="col-md-3">
+								   Enable Trim
+							</div>
+							<div class="col-md-3 aligntop">
+		 <input id="optXaxisChange1" ej-dropdownlist #optXaxisChange1 (select)="onchange5($event)" [selectedIndex]="0" [dataSource]="['False', 'True']" width="100%" />
+							</div>
+						<div class="col-md-3">
+								   Maximum Label Width
+							</div>
+							<div class="col-md-3 aligntop">
+		<input id="maximumLabelWidth" type="text" ej-numerictextbox  (ejchange)="onchange6($event)" width="100%" /> 
+							</div>
+						</div><br/>
+						<div class="row">
+							<div class="col-md-3">
+								   <b>Y-Axis</b>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								   Edge Label Placement
+							</div>
+							<div class="col-md-3 aligntop">
+			 <input id="edgeLabelY" ej-dropdownlist #edgeLabelY (select)="onchange7($event)" [selectedIndex]="0" [dataSource]="['None', 'Shift','Hide']" width="100%" />
+							</div>
+						<div class="col-md-3">
+								   Label Intersect Action
+							</div>
+							<div class="col-md-3 aligntop">
+			 <input id="optYaxisChange" ej-dropdownlist #optYaxisChange (select)="onchange8($event)" [selectedIndex]="0" [dataSource]="['None', 'Hide','MultipleRows']" width="100%" />
+							</div>
+						</div><br/>
+						<div class="row">
+							<div class="col-md-3">
+								   Tick Lines Position
+							</div>
+							<div class="col-md-3 aligntop">
+			 <input id="yticklines" ej-dropdownlist #yticklines (select)="onchange9($event)" [selectedIndex]="0" [dataSource]="['Outside', 'Inside']" width="100%" />
+							</div>
+						<div class="col-md-3">
+								   Label Position
+							</div>
+							<div class="col-md-3 aligntop">
+		 <input id="ylabels" ej-dropdownlist #yticklines (select)="onchange10($event)" [selectedIndex]="0" [dataSource]="['Outside', 'Inside']" width="100%" />						
+							</div>
+						</div><br/>
+						<div class="row">
+							<div class="col-md-3">
+								   Enable Trim
+							</div>
+							<div class="col-md-3 aligntop">
+		<input id="optYaxisChange1" ej-dropdownlist #optYaxisChange1 (select)="onchange11($event)" [selectedIndex]="0" [dataSource]="['False', 'True']" width="100%" />				
+							</div>
+						<div class="col-md-3">
+								   Maximum Label Width
+							</div>
+							<div class="col-md-3 aligntop">
+    <input id="maximumLabelWidth1" type="text" ej-numerictextbox (ejchange)="onchange12($event)" width="100%" /> 
+							</div>
+						</div><br/>
+</div>
+</div>

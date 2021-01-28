@@ -1,0 +1,133 @@
+.showpage {
+    display: block;
+}
+.productpage {
+    display: inline-block;
+    width:100%;
+}
+.controlText-section{
+    width: 100%;
+}
+.controlSamples-section{
+    margin-bottom: 50px;
+    display: inline-block;
+    width:100%;
+}
+body{
+    font-family:  Segoe UI;
+    font-size: 14px;
+    overflow: auto;
+}
+.featuredsamples {
+    display: table;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    list-style-position: outside;
+}
+.listsampleimage {
+    float: left;
+    height: 344px;
+    width: 316px;
+}
+.litext > a {
+    color: #4F4F4C;
+    font-size: 13px;
+    font-weight: bolder;
+}
+.bootstrap .litext {
+    color: #000;
+}
+.lisampleimage {
+    height: 100%;
+}
+.imgstyle {
+    min-width: 316px;
+    min-height: 344px;
+    background-repeat: no-repeat;
+}
+.litext {
+    position: relative;
+    float: left;
+    margin-top: -126px;
+    margin-left: 20px;
+    height: auto;
+    color: #838383;
+    text-align: justify;
+    width: 155px;
+}
+.aclass {
+    text-decoration: none !important;
+}
+.litext > a {
+    color: #337ab7;
+    font-size: 13px;
+    font-weight: bolder;
+}
+.bootstrap .litext > a {
+    color: #296293;
+    font-weight: 600;
+}
+.litext > p {
+    margin-top: 6px;
+    font-size: 12px;
+    cursor: default;
+}
+.samplebutton {
+    float: left;
+   
+}
+.samplebutton .anchorclass {
+    height: 20px !important;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 0.1em .4em .3em;
+  
+}
+.anchorclass {
+    text-decoration: none;
+    color: #838383;
+    cursor: pointer;
+    
+}
+.anchorclass.e-btn.e-select {
+    border: 0px solid !important;
+}
+.qrcode {
+    bottom: 120px;
+    position: relative;
+    float: right;
+    margin-right: 18px;
+}
+.qrcode .qrimage {
+    height: 104px;
+    width: 104px;
+    display: block;
+    border: 1px solid #AAAAAA;
+}
+.darktheme .listsampleimage .anchorclass {
+    color: white;
+}
+.darktheme .litext > a {
+    color: white;
+}
+.material .productpage.showpage .codebutton .codeimg:before{
+	margin: -9px 0px 0 -1px;
+}
+.codebutton .anchorclass {
+    float: left;
+    height: 26px !important;
+    border-radius: 0 !important;
+    line-height: 23px;
+    margin-left: 132px;
+    margin-top: -39px;
+    padding-left: 4px;
+    width: 20px;
+    text-decoration: none;
+}
+.codebutton .codeimg:before {
+    content: "\e780";
+    font-size: 18px;
+    margin: -3px 0px 0 -3px;
+}
