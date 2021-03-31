@@ -1,0 +1,29 @@
+<ej-chart id="container" style="display:block;" (load)="onchartload($event)" primaryXAxis.title.text='Year'
+                primaryYAxis.rangePadding='additional' [primaryYAxis.range.min]="0" [primaryYAxis.range.max]="3" [primaryYAxis.range.interval]="0.5"
+                primaryYAxis.title.text='Inflation Rate(%)'
+                primaryYAxis.rangePadding='none'
+                primaryYAxis.labelFormat="{value}%" title.text='Inflation Analysis'>
+    <e-seriescollection>
+        <e-series [dataSource]="symbolData1"
+					xName="x"
+					yName="y"
+					name='India' 
+					type='line'
+                    [enableAnimation]="true"
+                    marker.shape='Diamond' [marker.visible]="true" [marker.size.height]="15" [marker.size.width]="15" [tooltip.visible]="true" tooltip.format="#series.name# : #point.y# in #point.x#"></e-series>
+	<e-series [dataSource]="symbolData2"
+					xName="x"
+					yName="y"
+					name='China' 
+					type='line'
+                    [enableAnimation]="true"
+                    marker.shape='Triangle' [marker.size.height]="15" [marker.size.width]="15" [marker.visible]="true" [tooltip.visible]="true" tooltip.format="#series.name# : #point.y# in #point.x#"></e-series>
+	<e-series [dataSource]="symbolData3"
+					xName="x"
+					yName="y"
+					name='Japan' 
+					type='line'
+                    [enableAnimation]="true"
+                    marker.shape='Hexagon' [marker.size.height]="15" [marker.size.width]="15" [marker.visible]="true" [tooltip.visible]="true" tooltip.format="#series.name# : #point.y# in #point.x#"></e-series>
+	</e-seriescollection>
+</ej-chart>
