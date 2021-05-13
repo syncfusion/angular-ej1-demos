@@ -1,0 +1,51 @@
+<ej-chart #trendline id="trendline" style="display:block;" (load)="onchartload($event)" primaryYAxis.title.text="Rupees against Dollars" primaryXAxis.title.text="Years" 
+            [isResponsive]="true"
+            title.text='Historical Indian Rupee Rate (INR USD)'
+            size.height="600"
+            [legend.visible]="true" legend.shape="seriesType">
+    <e-seriescollection>
+        <e-series [enableAnimation]="true" type="scatter" fill="#0066FF" name="Rupees"
+					[tooltip.visible]="true" [trendlines]="Trend">
+		 </e-series>
+	</e-seriescollection>
+</ej-chart>
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+				<div class="row">
+				<div class="col-md-3">
+						<div style="padding-top:5px">Trendline Type:</div>
+					</div>
+					<div class="col-md-3 aligntop" >
+               <input id="trendlineType" ej-dropdownlist #trendlineType (select)="onchange1($event)" [selectedIndex]="0" [dataSource]="['Linear', 'Exponential', 'Logarithmic','Power','Polynomial','MovingAverage']" width="100%" />
+					</div>
+					<div class="col-md-3">
+						<div style="padding-top:5px">Forward Forecast:</div>
+					</div>
+					<div class="col-md-3 aligntop">
+    <input id="forwardForecast" type="text" ej-numerictextbox  value="0" (ejchange)="onchange2($event)" width="100%" />  
+					</div>
+				</div>	<br/>
+                <div class="row">
+					<div class="col-md-3">
+						Backward Forecast:
+					</div>
+					<div class="col-md-3 aligntop">
+     <input id="backwardForecast" type="text" ej-numerictextbox  value="0" (ejchange)="onchange3($event)" width="100%" />  
+					</div>
+				<div class="col-md-3">
+						<div style="padding-top:5px">Polynomial Order:</div>
+					</div>
+					<div class="col-md-3 aligntop">
+     <input id="backwardForecast" type="text" ej-numerictextbox  value="2" (ejchange)="onchange4($event)" width="100%" />  
+					</div>
+				</div><br/>
+				 <div class="row">
+					<div class="col-md-3">
+						<div style="padding-top:5px">Period:</div>
+					</div>
+					<div class="col-md-3 aligntop">
+ <input id="period" type="text" ej-numerictextbox  value="2" (ejchange)="onchange5($event)" width="100%" />
+					</div>
+				</div>
+</div>
+</div>

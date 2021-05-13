@@ -1,0 +1,10 @@
+ej-reportviewer {
+    display: block;
+    height: 550px;
+}
+
+/deep/  .e-reportviewer-pageview {
+	-webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+}

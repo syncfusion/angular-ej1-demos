@@ -1,0 +1,23 @@
+       
+ .row [class*="cols-"]:first-child > div:first-child {
+    margin: 0 auto;
+}
+.listbox .frame {
+    display: table;
+    width: 600px;
+    padding: 50px;
+    height:300px;
+}
+.frame {
+    border: 1px solid #BBBCBB;
+    border-radius: 10px;
+    color: #5C5C5C;
+}
+   .ctrllabel{
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+     .contents {
+            display: inline-block;
+            padding: 0px 14px;
+        }

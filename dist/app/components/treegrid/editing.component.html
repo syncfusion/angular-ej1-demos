@@ -1,0 +1,16 @@
+<ej-treegrid id="TreeGridControl" [dataSource]="treeGridData" 
+childMapping="subtasks" 
+[treeColumnIndex]=treeColumnIndex 
+sizeSettings.height="400px"
+[editSettings]="editsettings"
+[toolbarSettings]="toolbarsettings"
+    sizeSettings.width="100%">
+    <e-treegrid-columns>
+        <e-treegrid-column field="taskID" headerText="Task ID" editType="numericedit"></e-treegrid-column>
+        <e-treegrid-column field="taskName" headerText="TaskName"></e-treegrid-column>
+        <e-treegrid-column field="startDate" headerText="Start Date" editType="datepicker"></e-treegrid-column>
+        <e-treegrid-column field="endDate" headerText="End Date" editType="datepicker"></e-treegrid-column>
+        <e-treegrid-column field="duration" headerText="Duration" editType="numericedit"></e-treegrid-column>
+        <e-treegrid-column field="progress" headerText="Progress" editType="numericedit"></e-treegrid-column>
+    </e-treegrid-columns>
+</ej-treegrid>

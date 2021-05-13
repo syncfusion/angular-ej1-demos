@@ -1,0 +1,94 @@
+<div id="Tooltip" style="display: none;">
+		<div id="icon">	
+            <div id="airplaneicon">
+			</div>
+	    </div>
+        <div id="value">
+            <div>
+                <label id="no-of-airports">&nbsp;#point.y#
+			   </label>
+               <label id="airport">Airports
+			   </label>
+            </div>
+        </div>
+    </div>
+  <style class="cssStyles">
+        label{
+		margin-bottom : -25px !important ;
+		text-align :center !important;
+		}
+        .tooltipDiv {
+            background-color:#E94649;        
+            color: white;
+			width:130px;
+        }
+        #Tooltip >div:first-child {
+            float: left;
+        }
+        #Tooltip #value {
+            float: right;
+            height: 50px;
+            width: 60px;
+        }
+        #Tooltip #value >div {
+            margin: 5px 5px 5px 5px;            
+        }
+        #Tooltip #no-of-airports {
+            font-size: 20px;
+            font-family: segoe ui;
+			padding-left: 2px;
+			color: #ffffff;
+        }
+         #Tooltip #airport {
+            font-size: 12px;
+            font-family: segoe ui;
+			color: #ffffff;
+        }
+        #airplaneicon {			
+            background-image: url("app/content/images/chart/airplane.png");
+            height: 60px;           
+            width: 60px;
+            background-repeat: no-repeat;
+        }		 
+  </style>
+<ej-chart #animation id="animation" style="display:block;" [isResponsive]="true" (load)="onchartload($event)" primaryXAxis.title.text='Countries' primaryXAxis.labelIntersectAction="trim" primaryYAxis.title.text="Number of airports" [isResponsive]="true"
+            title.text="Total number of Airports in various countries"         
+            [legend.visible]="false" legend.columnCount="5">
+    <e-seriescollection>
+        <e-series name="Airports" [dataSource]="animationData" size="size" xName="x" yName="y" drawType='column' [tooltip.visible]="true" tooltip.template="Tooltip"
+					[enableAnimation]="true" type="spline" fill="#5e35b1"
+					marker.shape='circle' [marker.size.height]="10" [marker.size.width]="10" 
+                    [marker.visible]="true"></e-series>
+    </e-seriescollection>
+</ej-chart>
+
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+      <div class="row">
+                        <div class="col-md-3">
+                            Series Type
+                        </div>
+                        <div class="col-md-3">
+							 <input id="seriestype" ej-dropdownlist #seriestype (select)="onchange1($event)" [selectedIndex]="0" [dataSource]="['Spline', 'Area', 'Column','Bar','Scatter','Bubble','Pie','Doughnut','Polar']" width="100%" />
+                        </div>
+                    </div>
+					<br />
+					<div class="row">
+						<div class="col-md-3">
+							 Series Animation
+						</div>
+						<div class="col-md-3 aligntop">
+                             <ej-checkbox #chkEnableAnimation value="LabelAutoAngle" (ejchange)="onchange2($event)" [checked]="true"></ej-checkbox>
+						</div>
+					</div><br/>
+					<div class="row">
+						<div class="col-md-3">
+							 Animation Duration
+						</div>
+						<div class="col-md-3 aligntop">
+                            <input id="duration" type="text" ej-numerictextbox value="2000" (ejchange)="onchange3($event)"/>
+						</div>
+					</div>			
+ </div>
+ </div>
+ 
