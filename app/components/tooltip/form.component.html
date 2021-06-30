@@ -1,0 +1,25 @@
+<div id="form" class="frame">
+<ej-tooltip id="details" trigger="click" width="175px" height="30px" [position]="tooltipposition" target=".form-control" (beforeOpen)= onOpen($event) role="form">
+    <fieldset>
+        <div class="form-group">
+            <label for="name">User Name:</label>
+            <input class="form-control" type="text" id="name" name="firstname" title="Please enter your name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input class="form-control" id="email" type="text" name="email" title="Enter a valid email address">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input class="form-control" id="pwd" type="password" name="pwd" title="Be at least 8 characters length">
+        </div>
+        <div class="form-group">
+            <label for="Cpwd">Confirm Password:</label>
+            <input class="form-control" type="password" id="Cpwd" name="Cpwd" title="Re-enter your password">
+        </div>
+
+        <input id="sample" type="submit" value="Submit">
+        <input id="clear" type="reset" value="Reset">
+    </fieldset>
+</ej-tooltip>
+</div>

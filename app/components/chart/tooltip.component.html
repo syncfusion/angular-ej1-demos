@@ -1,0 +1,87 @@
+<div id="Tooltip" style="display: none;">
+		<div id="icon">	
+			<div id="grain"></div>
+		</div>
+        <div id="value">
+            <div>
+				<div id="efpercentage">#point.x#</div>
+				<div id="ef">#point.y#</div>
+            </div>
+        </div>
+    </div>
+<style class="cssStyles">
+        .tooltipDivcontainer 
+		{
+            background-color:#C1272D !important;        
+            color: white;
+			width:100px;
+        }
+        #Tooltip >div:first-child 
+		{
+            float: left;
+        }
+        #Tooltip #value {
+            float: right;
+            height: 50px;
+            width: 50px;
+            background-color:#C1272D
+        }
+        #Tooltip #value >div 
+		{
+            margin: 3px 5px 5px 5px;
+            
+        }
+        #Tooltip #efpercentage
+		{
+            font-size: 12px;
+            font-family: segoe ui;
+            color:#E7C554 !important; 
+			font-weight: bold;
+        }
+         #Tooltip #ef 
+		{
+            font-size: 20px;
+            font-family: segoe ui;
+			font-weight: bold;
+			color:white !important;
+             
+        }
+        #grain 
+		{
+            background-image: url("app/content/images/chart/grain.png"); 
+            height: 50px;
+            width: 50px;
+            background-repeat: no-repeat;
+        }
+ </style>
+<ej-chart id="container" style="display:block;" (load)="onchartload($event)"  [primaryXAxis.range.min]="2001" [primaryXAxis.range.max]="2013" [primaryXAxis.range.interval]="1" primaryXAxis.font.color="White" primaryXAxis.font.size="15px"
+                primaryXAxis.axisLine.color="#EFEFEF" [primaryXAxis.axisLine.width]="3"
+                [primaryXAxis.majorGridLines.visible]="false"
+                primaryXAxis.edgeLabelPlacement='hide'
+                [primaryXAxis.majorTickLines.visible]="false"
+				primaryYAxis.labelFormat="{value}" primaryYAxis.font.color="White" primaryYAxis.font.size="15px"
+                primaryYAxis.title.text='Billion Bushels' primaryYAxis.title.font.color='White' primaryYAxis.title.font.size="20px"
+                primaryYAxis.majorGridLines.color='#EFEFEF' [primaryYAxis.majorGridLines.width]="2"
+                primaryYAxis.axisLine.color='#EFEFEF' [primaryYAxis.axisLine.width]="4"
+                [primaryYAxis.range.min]="1.50" [primaryYAxis.range.max]="2.70" [primaryYAxis.range.interval]="0.20"
+                [primaryYAxis.majorTickLines.visible]="false"
+				commonSeriesOptions.type='line'
+				[commonSeriesOptions.enableAnimation]="true"
+				commonSeriesOptions.fill='#333333'
+                commonSeriesOptions.marker.shape='circle'
+                [commonSeriesOptions.marker.visible]="true"
+                commonSeriesOptions.marker.fill='#C1272D' [isResponsive]="true"
+            backGroundImageUrl='app/content/images/chart/wheat.png'
+            size.height="600"
+            [legend.visible]="false"  title.text='USA Wheat production'
+				title.text.font.color='#333333'>
+    <e-seriescollection>
+        <e-series [dataSource]="tooltipData"
+					xName="x"
+					yName="y"
+					name='India' 
+					[tooltip.visible]="true" 
+					tooltip.template='Tooltip'
+				    ></e-series>
+	</e-seriescollection>
+</ej-chart>

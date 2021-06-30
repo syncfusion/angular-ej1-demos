@@ -1,0 +1,11 @@
+ej-pivotclient {
+    display: block;
+    height: 700px;
+    width: 100%; 
+}
+.e-pivotclient{
+    position: inherit !important;
+}
+.e-ddl {
+    margin: -25px 0 0 100px;
+}

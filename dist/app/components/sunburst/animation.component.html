@@ -1,0 +1,30 @@
+<div style="margin-left: 150px">
+<ej-sunburstchart #animation id="animation" [dataSource]="Data1" valueMemberPath="Population" [levels]="Level" [dataLabelSettings.visible]="true"
+		 [innerRadius]="0.2"
+         [tooltip.visible]="true"
+		 [size.height]="600" 
+         [enableAnimation]="true"
+         title.text="Population Details"
+		 [zoomSettings.enable]="false"
+         [legend.visible]="true"
+         legend.position="top">          
+</ej-sunburstchart>
+</div>
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+    <div class="row">
+                <div class="col-md-3">
+                    Enable Animation
+                </div>
+                <div class="col-md-3 aligntop">
+       <ej-checkbox #enable (ejchange)="onchange1($event)" [checked]="true"></ej-checkbox>
+                </div>
+            <div class="col-md-3">
+                  Animation Type
+					 </div>
+                <div class="col-md-3 aligntop">
+     <input id="animationtype" ej-dropdownlist #animationtype (select)="onchange2($event)" [selectedIndex]="0" [dataSource]="['Rotation', 'FadeIn']" width="100%" />
+                </div>
+            </div>
+ </div>
+ </div>
