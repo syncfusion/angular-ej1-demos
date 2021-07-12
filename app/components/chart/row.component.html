@@ -1,0 +1,82 @@
+<div id="Tooltip" style="display: none; height:120px; width:125px;padding-top: 10px;padding-bottom:10px">       
+        <div align="center" style="font-weight:bold">
+            #point.x#
+        </div>  
+        <table>
+            <tr>
+                <td>
+                   Open:
+                </td>
+                <td>
+                    $#point.open#
+                </td>               
+            </tr>
+            <tr>
+                <td>
+                    High:
+                </td>
+                <td>
+                    $#point.high#
+                </td>               
+            </tr>
+             <tr>
+                <td>
+                    Low:
+                </td>
+                <td >
+                    $#point.low#
+                </td>               
+            </tr>
+             <tr>
+                <td>
+                    Close:
+                </td>
+                <td>
+                    $#point.close#
+                </td>               
+            </tr>             
+        </table>  
+	</div>
+<style class="cssStyles">
+    #Tooltip table, table th, table tr , table td
+	{
+        border:0px none;
+        margin: 0 auto;
+    }
+  	#Tooltip 
+	{
+        border:2px transparent;
+        color:white;
+    }
+	#Tooltip td
+	{
+		color:white;
+	}
+ </style>
+<ej-chart id="rangeColumn" style="display:block;"  primaryXAxis.title.text="Date" [rowDefinitions]="RowDefinition"
+                [primaryXAxis.columnIndex]="0"
+                [primaryXAxis.majorTickLines.visible]="false"
+                primaryXAxis.labelFormat="dd/MM/yyyy"
+                primaryXAxis.valueType="datetime"
+				[primaryYAxis.rowIndex]="0"
+				[primaryYAxis.rowSpan]="2"
+				[axes]="Axes"
+                [primaryYAxis.range.min]="83" [primaryYAxis.range.max]="87" [primaryYAxis.range.interval]="1" 
+                primaryYAxis.title.text="Million USD" [commonSeriesOptions.enableAnimation]="true" (load)= "onchartload($event)"
+            [isResponsive]="true"
+            title.text="Conn's,Inc Stock Details"
+            size.height="600"
+            [legend.visible]="false">
+    <e-seriescollection>
+        <e-series name="series1"
+					yAxisName="y1SecondQuater"
+					type='column' 
+					fill="#94D3F1" 
+					[opacity]="1" 					
+					[tooltip.visible]="true"></e-series>
+		<e-series name="series5"  
+					type='hiloopenclose'
+                    [border.width]="2" [tooltip.visible]="true" 
+						tooltip.template='Tooltip'></e-series>
+    </e-seriescollection>
+</ej-chart>

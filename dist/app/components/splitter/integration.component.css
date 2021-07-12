@@ -1,0 +1,15 @@
+
+
+.cont #treeView, ._content {
+    margin-bottom: 0;
+    border: none;
+    padding: 20px;
+}
+.h3 {
+font-size: 14px;
+margin: 0;
+}
+
+.spe {
+display: none;
+}
