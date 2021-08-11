@@ -1,0 +1,16 @@
+<div class="control" style="height:600px">
+    <ej-pivotgrid id="PivotGrid1" [dataSource.data]="data" [dataSource.rows]="rows" [dataSource.columns]="columns" [dataSource.values]="values" pivotTableFieldListID="PivotSchemaDesigner1" [enableGroupingBar]="true" >
+    </ej-pivotgrid>
+    <ej-pivotschemadesigner id="PivotSchemaDesigner1"></ej-pivotschemadesigner>
+</div>
+<div id="property-window" class="box wide" style="width: 600px">
+	<table width="500px">
+        <tr>
+            <td> Data Source </td>
+            <td>
+                <input id="rdbRelational" type="radio" ej-radiobutton name="radio1" [checked]="true" value="relational" (ejchange)="onChange($event)" /> Relational</td>
+            <td>
+                <input id="rdbOlap" ej-radiobutton type="radio" name="radio1" value="olap" (ejchange)="onChange($event)" /> OLAP</td>
+        </tr>
+    </table>
+</div>

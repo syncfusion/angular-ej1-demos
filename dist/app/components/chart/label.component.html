@@ -1,0 +1,70 @@
+<div id="template">
+        <div id="left">
+			<img src="../../content/images/chart/icon_investments.png"/>
+		</div>
+        <div id="right">
+            <div id="point">#point.y#%</div>
+        </div>
+	</div>
+<style>
+    #point 
+	{
+        font-family: segoe ui;
+        font-size: 16px;
+        color: black;
+    }
+    
+	#left, #right 
+	{
+        float: left;   
+    }
+    
+	img 
+	{
+        height: 25px;
+        width: 30px;
+    }
+	
+	#left
+	{
+		background-color: #8CC640;   
+    }
+	
+	#right
+	{
+        background-color: #C3C3C3; 
+        height: 30px;
+        border-style:solid;
+        border-color:#8CC640;
+        border-width: 1px;				
+    }
+    
+	#template 
+	{
+        display:none;
+    }
+ </style>
+<ej-chart id="label" style="display:block;" (load)="onchartload($event)"
+                primaryXAxis.title.text='Years'
+				primaryXAxis.valueType='category'
+                primaryYAxis.labelFormat="{value}%"
+                primaryYAxis.title.text='Percentage'
+				commonSeriesOptions.type='spline' 
+				[commonSeriesOptions.enableAnimation]="true"				
+				[commonSeriesOptions.tooltip.visible]="true"
+                commonSeriesOptions.marker.dataLabel.shape="circle"
+                [commonSeriesOptions.marker.visible]="true" [isResponsive]="true"
+            title.text="Gross Investments"
+            size.height="600"
+            [legend.visible]="true">
+    <e-seriescollection>
+        <e-series name='India' fill='#8CC640' [marker.dataLabel.visible]="true" 
+								marker.dataLabel.template='template' marker.dataLabel.verticalTextAlignment='far' 
+                    [marker.size.height]="10" [marker.size.width]="10"
+					></e-series>
+		<e-series name='Singapore' fill='#CBA4C7' [marker.dataLabel.visible]="true" 
+				marker.dataLabel.shape='Rectangle' marker.dataLabel.verticalTextAlignment='far' [marker.size.height]="10" [marker.size.width]="10"></e-series>
+		<e-series name='Russia' [marker.dataLabel.visible]="true" 
+						marker.dataLabel.shape='Rectangle' marker.dataLabel.verticalTextAlignment='far' [marker.size.height]="10" [marker.size.width]="10"></e-series>
+    </e-seriescollection>
+</ej-chart>

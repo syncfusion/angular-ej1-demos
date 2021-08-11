@@ -1,0 +1,20 @@
+<div style="width:100%;height:100%;">
+    <div class="content-container-fluid">
+        <div class="row">
+            <div class="listbox">
+                <div class="cols-sample-area">
+                    <div class="frame">
+                        <div class="contents">
+                            <div class="ctrllabel">Select group</div>
+                            <ej-listbox id="groupsList" height="180px" width="220px" [dataSource]="groups" [fields]="fields" cascadeTo="countryList"></ej-listbox>
+                        </div>
+                        <div class="contents">
+                            <div class="ctrllabel">Select country</div>
+                            <ej-listbox id="countryList" height="180px" width="220px" [loadDataOnInit]="false" [dataSource]="countries"></ej-listbox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

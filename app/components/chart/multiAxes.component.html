@@ -1,0 +1,31 @@
+<ej-chart id="container1" style="display:block;" (load)="onchartload($event)"  primaryXAxis.title.text="Month" [primaryYAxis.range.min]="0"    [primaryYAxis.range.max]="90" [primaryYAxis.range.interval]="10"
+                primaryYAxis.labelFormat='{value}F'
+                [primaryYAxis.axisLine.visible]="false"
+                primaryYAxis.title.text="Temperature(Fahrenheit)" [axes]="Axes" [commonSeriesOptions.enableAnimation]="true" [isResponsive]="true"
+            title.text="Weather Report"
+            size.height="600"
+            [legend.visible]="true">
+    <e-seriescollection>
+        <e-series [dataSource]="AxesData1" xName="x" yName="y" name='Germany'
+					type='column'
+					fill="#69D2E7"
+					[tooltip.visible]="true" 
+				   ></e-series>
+	  <e-series [dataSource]="AxesData2" xName="x" yName="y" name='India'
+					type='line'
+					yAxisName='yAxis'
+					[tooltip.visible]="true"
+                    marker.shape='circle'
+                    [marker.size.height]="6" [marker.size.width]="6"
+                    [marker.visible]="true"
+				   ></e-series>
+	<e-series [dataSource]="AxesData3" xName="x" yName="y" name='Canada'
+					type='line'
+					yAxisName='yAxis1'
+					[tooltip.visible]="true"
+                    marker.shape='circle'
+                    [marker.size.height]="6" [marker.size.width]="6"
+                    [marker.visible]="true"
+				   ></e-series>
+	</e-seriescollection>
+</ej-chart>

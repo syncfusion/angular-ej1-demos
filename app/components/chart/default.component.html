@@ -1,0 +1,11 @@
+<ej-chart id="line" style="display:block;" [isResponsive]="true" [legend.visible]="true" (load)="onchartload($event)" [primaryXAxis.range.min]="2005" [primaryXAxis.range.max]="2011" [primaryXAxis.range.interval]="1" primaryXAxis.title.text='Year' primaryXAxis.valueType='category' [primaryYAxis.range.min]="25" [primaryYAxis.range.max]="50" [primaryYAxis.range.interval]="5" primaryYAxis.labelFormat="{value}%" primaryYAxis.title.text='Efficiency'
+    commonSeriesOptions.type="line" [commonSeriesOptions.enableAnimation]="true" commonSeriesOptions.tooltip.visible="true" commonSeriesOptions.marker.visible="true"  commonSeriesOptions.marker.shape="circle"
+    [commonSeriesOptions.border.width]="2" title.text="Efficiency of oil-fired power production">
+    <e-seriescollection>
+        <e-series name="India" [dataSource]="EfficiencyList" xName="Year" yName="yName" [marker.size.height]="10" [marker.size.width]="10"></e-series>
+        <e-series name="Germany" [dataSource]="EfficiencyList" xName="Year" yName="yName1" [marker.size.height]="10" [marker.size.width]="10"></e-series>
+        <e-series name="England" [dataSource]="EfficiencyList" xName="Year" yName="yName2" [marker.size.height]="10" [marker.size.width]="10"></e-series>
+        <e-series name="France" [dataSource]="EfficiencyList" xName="Year" yName="yName3" [marker.size.height]="10" [marker.size.width]="10"></e-series>
+    </e-seriescollection>
+
+</ej-chart>
