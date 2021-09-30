@@ -1,0 +1,68 @@
+<div class="content-container-fluid">
+			<div class="row">
+				<div class="cols-sample-area">
+					<div id="BulletGraph1">
+                        <ej-bulletgraph #bullet id="bullet" style="display:block" align="center" [height]="400" [width]="650" [qualitativeRangeSize]="range" [isResponsive]="false" [applyRangeStrokeToTicks]="true" [captionSettings]="caption" [value]="8" [comparativeMeasureValue]="5" [quantitativeScaleSettings]="quantitativescale">         
+     <e-qualitativeranges>
+         <e-qualitativerange rangeEnd="3" rangeStroke="#61a301">
+         </e-qualitativerange>
+         <e-qualitativerange rangeEnd="7" rangeStroke="#fcda21">
+         </e-qualitativerange>
+         <e-qualitativerange rangeEnd="10" rangeStroke="#d61e3f">
+         </e-qualitativerange>
+     </e-qualitativeranges>   
+ </ej-bulletgraph>
+					</div>
+				</div>
+	
+				  <div id="property-window" class="box wide">
+					<div class="prop-grid">                    
+						<div class="row">
+							<div class="col-md-3">
+								Caption Position 
+							</div>
+							<div class="col-md-3">
+                                <input id="markerType" ej-dropdownlist #markerType (select)="BulletCapPosition($event)" [selectedIndex]="2" [dataSource]="['top', 'left', 'bottom', 'float']" width="100%" />
+							</div>
+							<div class="col-md-3">
+								Caption Alignment 
+							</div>
+							<div class="col-md-3">
+                                <input id="Text1" ej-dropdownlist #markerType (select)="BulletCapAlignment($event)" [selectedIndex]="0" [dataSource]="['near', 'far', 'center']" width="100%" />
+								
+							</div>
+						</div><br/>
+						<div class="row">                        
+							<div class="col-md-3">
+								Subtitle Position
+							</div>
+							<div class="col-md-3">
+                                <input id="Text2" ej-dropdownlist #markerType (select)="BulletSubtitlePosition($event)" [selectedIndex]="2" [dataSource]="['top', 'left', 'bottom', 'float']" width="100%" />
+								
+							</div>
+						</div><br/>
+						<div class="row">
+							<div class="col-md-3">
+								Subtitle Alignment
+							</div>
+							<div class="col-md-3">
+                                <input id="Text3" ej-dropdownlist #markerType (select)="BulletSubtitleAlignment($event)" [selectedIndex]="0" [dataSource]="['near', 'far', 'center']" width="100%" />
+								
+							</div>
+						</div><br/>
+						<div class="row">
+                             <div class="col-md-3">
+                           Enable Trim
+                        </div>
+                             <div class="col-md-3">
+                            <ej-checkbox #chkEnableAnimation value="Enable Trim" (change)="BulletTrim($event)" [checked]="true"></ej-checkbox>
+                        </div>
+                                
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+ 

@@ -1,0 +1,4 @@
+<ej-pivotgrid [dataSource.data]="data" [dataSource.rows]="rows" [dataSource.columns]="columns" [dataSource.values]="values" 
+    [hyperlinkSettings] = "hyperLink" (rowHeaderHyperlinkClick)="rowCellClick($event)" (summaryCellHyperlinkClick)="summaryCellClick($event)"
+    (valueCellHyperlinkClick)="valueCellClick($event)" (columnHeaderHyperlinkClick)="columnCellClick($event)" >
+</ej-pivotgrid>

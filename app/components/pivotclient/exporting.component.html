@@ -1,0 +1,17 @@
+<ej-pivotclient id="PivotClient1" [title]="title" [dataSource.data]="data" [dataSource.catalog]="catalog" [dataSource.cube]="cube" [dataSource.rows]="rows" [dataSource.columns]="columns" [dataSource.values]="values" [clientExportMode] ="value"  (beforeExport)="export($event)" (saveReport)="saveReportSettings($event)" (fetchReport)="saveReportSettings($event)" (loadReport)="saveReportSettings($event)">
+</ej-pivotclient>
+<div id="property-window" class="box wide" style="width: 350px">
+
+    <div class="row" style="margin-top: 20px">
+        <table width="300px">
+            <tr>
+                <td class="chkrad">
+                    Export Mode:
+                </td>
+                <td class="chkrad" colspan="2">
+                    <input id="exportOptions" ej-dropdownlist  [dataSource]="exportOptions" [(value)]="value" (ejchange)="onChange($event)"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

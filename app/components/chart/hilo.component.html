@@ -1,0 +1,60 @@
+<div id="Tooltip" style="display: none; width:125px;padding-top: 10px;padding-bottom:10px">       
+        <div align="center" style="font-weight:bold">
+                    #point.x#
+        </div>                
+        <table>
+            <tr>
+                <td>
+                    High:
+                </td>
+                <td>
+                    #point.high#mm
+                </td>               
+            </tr>
+             <tr>
+                <td>
+                    Low:
+                </td>
+                <td >
+                    #point.low#mm
+                </td>               
+            </tr>                          
+        </table>   
+    </div>
+	 <style class="cssStyles">
+    #Tooltip table, table th, table tr 
+	{
+        border:0px none;
+        margin: 0 auto;
+    }
+    table td 
+	{
+        border:0px none;
+        margin: 0 auto;
+        display:inline;
+    }
+	#Tooltip 
+	{
+        border:2px transparent;
+        color:white;
+    }
+	#Tooltip td
+	{
+		color:white;
+	}
+ </style>
+<ej-chart id="hilo" style="display:block;" primaryXAxis.title.text="Country"
+                [primaryXAxis.majorGridLines.visible]="false" [legend.visible]="false"
+                [primaryXAxis.labelRotation]="90"
+				[primaryYAxis.rowIndex]="0"
+                primaryYAxis.title.text="Rainfall(mm)"
+                [primaryYAxis.range.min]="0" [primaryYAxis.range.max]="300" [primaryYAxis.range.interval]="50"
+                [primaryYAxis.majorGridLines.visible]="false"
+                primaryYAxis.labelFormat="{value}mm" commonSeriesOptions.type='hilo' title.text='Highest and Lowest Rainfall across World'>  
+    <e-seriescollection>
+        <e-series [dataSource]="hiloData" xName="x" high="high" low="low"
+                    name='Rainfall'
+					[tooltip.visible]="true" tooltip.template='Tooltip'				
+					[enableAnimation]="true"></e-series>
+	</e-seriescollection>
+</ej-chart>
