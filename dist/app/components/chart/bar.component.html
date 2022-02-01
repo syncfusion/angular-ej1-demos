@@ -1,7 +1,0 @@
-<ej-chart id="bar_chart" style="display:block;" title.text="Unemployment rate (%)" [legend.visible]="false" [isResponsive]="true" [primaryXAxis.range.min]="2005" [primaryXAxis.range.max]="2012" [primaryXAxis.range.interval]="1" primaryXAxis.labelIntersectAction="hide"
-    [primaryYAxis.range.min]="3" [primaryYAxis.range.max]="12" [primaryYAxis.range.interval]="1" primaryYAxis.labelFormat="{value}%" primaryYAxis.title.text="Percentage" primaryXAxis.title.text="Year" [commonSeriesOptions.enableAnimation]="true" (load)="onchartload($event)">
-    <e-seriescollection>
-        <e-series name="India" type="bar" [dataSource]="UnemploymentList" xName="xName" yName="yName"></e-series>
-        <e-series name="US" type="bar" [dataSource]="UnemploymentList" xName="xName" yName="yName1"></e-series>
-    </e-seriescollection>
-</ej-chart>
