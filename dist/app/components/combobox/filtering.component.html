@@ -1,0 +1,6 @@
+<input id="filter" ej-combobox [dataSource]="data"
+ [fields]="fieldsvalues" 
+ width="100%" 
+ (filtering)="filtering($event)" 
+ placeholder="Select a game" 
+ [allowFiltering]="allowFiltering">

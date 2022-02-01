@@ -1,0 +1,102 @@
+<div class="content-container-fluid">
+        <div class="row">
+            <div class="cols-sample-area" align="center">
+                <div id="circularframe">
+                    <div id="FrameCircularGauge">
+                            <ej-circulargauge #gauge backgroundcolor="transparent" [isResponsive]="true" width="500" [readOnly]="true">
+    <e-scales>
+        <e-scale [showRanges]="true" [border.width]="0.5" [startAngle]="122" [sweepAngle]="296" [radius]="130" [showScaleBar]="true" [size]="1" [maximum]="120" [majorIntervalValue]="20" [minorIntervalValue]="10">
+            <e-pointers>
+                <e-pointer [value]="60" [showBackNeedle]="true" [backNeedleLength]="5" [length]="95" [width]="7">
+                </e-pointer>
+            </e-pointers>
+            <e-ticks>
+                <e-tick type='major' [distanceFromScale]='2' [height]='16' [width]='1' color='#8c8c8c'>
+                </e-tick>
+                <e-tick type='minor' [distanceFromScale]='2' [height]='8' [width]='1' color='#8c8c8c'>
+                </e-tick>
+            </e-ticks>
+            <e-labels>
+                <e-label color="#8c8c8c">
+                </e-label>
+            </e-labels>
+            <e-ranges>
+                <e-range [distanceFromScale]='10' placement="far" [startValue]='0' [startWidth]="10" [endWidth]="20" [endValue]='40' backgroundColor='Green' border.color="Green" border.width="0">
+                </e-range>
+                <e-range [distanceFromScale]='10' placement="far" [startValue]='40' [startWidth]="20" [endWidth]="30" [endValue]='80' backgroundColor='yellow' border.color='yellow' border.width="0">
+                </e-range>
+                <e-range [distanceFromScale]='10' placement="far" [startValue]='80' [startWidth]="30" [endValue]='120' [endWidth]="35" backgroundColor='red' border.color='red' border.width="0">
+                </e-range>
+            </e-ranges>
+        </e-scale>
+    </e-scales>
+</ej-circulargauge>
+                    </div>
+                </div>
+            </div>
+              <div id="property-window" class="box wide">
+                <div class="prop-grid">
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            Frame Type
+                        </div>
+                        <div class="col-md-3" style="margin-top: 8px;">
+                            <input id="frameType" ej-dropdownlist #frameType (select)="onchange($event)" [selectedIndex]="0" [dataSource]="['Full - Circular', 'Semi - Circular']" width="100%" />
+                        </div>
+                        <div class="col-md-3">
+                            Range Placement
+                        </div>
+                        <div class="col-md-3" style="margin-top: 8px;">
+                            <input id="rangePlacement" ej-dropdownlist #rangePlacement (select)="onchange($event)" [selectedIndex]="0" [dataSource]="['Far', 'Near']" width="100%" />
+                        </div>
+
+
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Start Angle
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <ej-slider #startAngle id="startAngle" [sliderType]="minRange"  [value]="122" [height]="20" [width]="110" [minValue]="0" [maxValue]="360" [enableAnimation]="true" (ejchange)="onchange($event)"></ej-slider>
+                        </div>
+                        <div class="col-md-3">
+                            Sweep Angle
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <ej-slider #sweepAngle id="sweepAngle" [sliderType]="minRange"  [value]="296" [height]="20" [width]="110" [minValue]="90" [maxValue]="360" [enableAnimation]="true" (ejchange)="onchange($event)"></ej-slider>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Frame Start Angle
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <input id="frameStartAngle" ej-dropdownlist #frameStartAngle (select)="onchange($event)" [selectedIndex]="2" [enabled]="false" [dataSource]="['0', '90', '180', '270']" width="100%" />
+                        </div>
+                        <div class="col-md-3">
+                            clockwise direction
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <ej-checkbox #chkclockwise value="LabelAutoAngle" (ejchange)="onchange($event)" [checked]="true"></ej-checkbox>
+                        </div>
+
+
+                    </div><br/>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Range Distance
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <ej-slider #rangeDistance id="rangeDistance" [sliderType]="minRange"  [value]="10" [height]="20" [width]="110" [minValue]="0" [maxValue]="15" [enableAnimation]="true" (ejchange)="onchange($event)"></ej-slider>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

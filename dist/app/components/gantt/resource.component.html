@@ -1,0 +1,8 @@
+<ej-gantt id="GanttControl" [dataSource]="ganttData" taskIdMapping="taskID" taskNameMapping="taskName"
+            startDateMapping="startDate" endDateMapping="endDate" progressMapping="progress" durationMapping="duration" predecessorMapping="predecessor"
+            childMapping="subtasks" [treeColumnIndex]=treeColumnIndex  scheduleStartDate="02/01/2017" scheduleEndDate="04/09/2017"
+            sizeSettings.height="450px" sizeSettings.width="100%" resourceInfoMapping= "resourceId"
+                resourceNameMapping= "resourceName"
+                resourceIdMapping= "resourceId"
+                [resources]= "resourceData" (load)="load()">
+</ej-gantt>

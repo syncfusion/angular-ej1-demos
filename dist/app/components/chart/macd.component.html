@@ -1,0 +1,76 @@
+<ej-chart #macd id="macd" style="display:block;" (load)="onchartload($event)"  primaryXAxis.title.text="Date"
+                primaryXAxis.valueType="datetime"
+				primaryXAxis.labelFormat="dd,MMM" primaryYAxis.labelFormat='${value}'
+				[primaryYAxis.range.min]="55" [primaryYAxis.range.max]="75" [primaryYAxis.range.interval]="5" [axes]="Axes"
+			[zooming.enable]="true"
+			[crosshair.visible]="true" 
+			crosshair.type="trackball"
+			(trackToolTip)="track($event)"			
+			[isResponsive]="true"                        
+            title.text="MACD Indicator"
+            size.height="600"
+            [legend.visible]="false">
+    <e-seriescollection>
+        <e-series [dataSource]="macdData"
+					xName="xDate"
+					high="High"
+					low="Low"
+					open="Open"
+					close="Close"
+                    name='Hilo'
+					type='hiloopenclose'
+					drawMode='both' 
+					tooltip.visible="false"
+				    tooltip.format="#point.x#<br/>Open : $#point.open#<br/>High : $#point.high#<br/>Low : $#point.low#<br/>Close : $#point.close#<br/>" 
+					[enableAnimation]="true"></e-series>
+	</e-seriescollection>
+	<e-chart-indicators>
+	  <e-chart-indicator type="macd" 
+					seriesName="Hilo" 
+					yAxisName="yaxis" 
+                    fill="blue" 
+					width="2"
+					[longPeriod]="26" 
+					[shortPeriod]="12" 
+					[trigger]="9"
+                    histogram.fill="red"
+                    macdType="both"
+					[tooltip.visible]="false" 
+					tooltip.format="" 
+				    tooltip.fill="transparent"
+				    tooltip.border.color="transparent"
+                    [enableAnimation]="true">
+	  </e-chart-indicator>
+	</e-chart-indicators>
+</ej-chart>
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+        <div class="row">
+						<div class="col-md-3">
+                           Short Period:
+                        </div>
+                        <div class="col-md-3 aligntop">
+							<input id="shortPeriod" type="text" ej-numerictextbox value="5" (ejchange)="onchange1($event)" width="100%" />  
+                        </div>
+						<div class="col-md-3">
+                           Long Period:
+                        </div>
+						<div class="col-md-3 aligntop">
+							<input id="longPeriod" type="text" ej-numerictextbox  value="5" (ejchange)="onchange2($event)" width="100%" />  
+                        </div></div><br/>
+						 <div class="row">
+						<div class="col-md-3">
+                           Trigger:
+                        </div>
+                        <div class="col-md-3 aligntop">
+							<input id="trigger" type="text" ej-numerictextbox  value="5" (ejchange)="onchange3($event)" width="100%" />  
+                        </div>
+                    <div class="col-md-3">
+                            MACD Type:
+                        </div>
+                        <div class="col-md-3 aligntop">
+						 <input id="macdType" ej-dropdownlist #macdType (select)="onchange4($event)" [selectedIndex]="0" [dataSource]="['Both', 'Line', 'Histogram']" width="100%" />
+                        </div>
+                    </div>
+</div>
+</div>
