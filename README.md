@@ -113,4 +113,4 @@ Refer the Syncfusion Essential JS 1 for Angular Product Release Notes in [online
 
 * To renew the subscription, click [here](https://www.syncfusion.com/sales/products?utm_source=github&utm_medium=listing) or contact our sales team at <salessupport@syncfusion.com>.
 
-<p>Copyright © 2001-2022 Syncfusion, Inc. Updated on 2022-04-04 at precisely 16:00:19 EST.</p>
+<p>Copyright © 2001-2022 Syncfusion, Inc. Updated on 2022-04-04 at precisely 16:10:22 EST.</p>

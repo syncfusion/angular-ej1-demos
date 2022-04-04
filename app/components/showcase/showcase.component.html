@@ -1,0 +1,45 @@
+<nav>
+    <div class="productpage showpage">
+        <div class="controlText-section">
+            <div id="javaScriptTab" class="controlSamples-section">
+                <ul class="featuredsamples">
+                    <li class="listsampleimage" *ngFor="let detail of details">
+                        <a class="routerclass" routerLink="{{detail.route}}" routerLinkActive="active" target="_blank">
+                            <div class="lisampleimage">
+                                <div class="imgstyle" *ngIf="!dark">
+                                    <span class="samplestatus {{detail.type}}" *ngIf="detail.type" ></span>
+                                    <img [src]="'app/content/images/showcase/'+detail.image" />
+                                </div>
+                                <div class="imgstyle" *ngIf="dark">
+                                    <span class="samplestatus {{detail.type}}" *ngIf="detail.type" ></span>
+                                    <img [src]="'app/content/images/showcase/'+detail.darkimage" />
+                                </div>
+                            </div>
+                        </a>
+                        <div class="litext">
+                            <a class="anchorclass aclass">{{detail.text}}</a>
+                            <p> {{detail.description}}</p>
+
+                            <div class="samplebutton">
+                                <a class="anchorclass e-tbtn e-active routerclass" ej-button text="VIEW SAMPLE" routerLink="{{detail.route}}" target="_blank">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="codebutton" style="position: absolute;">
+                            <a class="anchorclass e-tbtn e-active routerclass" ej-button contentType="imageonly" prefixIcon="e-icon codeimg" routerLink="{{detail.sourcecode}}" 
+                                target="_blank">
+                            </a>
+                        </div>
+                        <div>
+                            <span class="qrcode">
+                                <span class="qrimage">
+                                    <img [src]="'app/content/images/showcase/'+detail.qrimage"/>
+                                </span>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

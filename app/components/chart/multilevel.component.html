@@ -1,0 +1,38 @@
+<ej-chart #multi id="multi" style="display:block;" (load)="onchartload($event)"  primaryXAxis.title.text='Months'
+				 [primaryXAxis.labelBorder.width]="1"
+				 [primaryXAxis.majorTickLines.visible]="false"
+				 [primaryXAxis.multiLevelLabels]="Multilevel" [primaryYAxis.range.min]="0" [primaryYAxis.range.max]="40" [primaryYAxis.range.interval]="5"
+                 primaryYAxis.title.text="Temperature in Celsius"
+				 [primaryYAxis.multiLevelLabels]="Multilevel1" commonSeriesOptions.type='spline' [commonSeriesOptions.enableAnimation]="true"
+                 [commonSeriesOptions.tooltip.visible]="true"
+                 [commonSeriesOptions.marker.visible]="true" 
+				 title.text="Temperature of London in 2015"
+			 [isResponsive]="true"
+			 [legend.visible]="false">
+    <e-seriescollection>
+        <e-series name='London' fill="#e8be33" [dataSource]="multiData" xName="x" yName="y"></e-series>
+	</e-seriescollection>
+</ej-chart>
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+           <div class="row">
+                       <div class="col-md-3">
+						Text Alignment
+						</div>
+						<div class="col-md-3">
+							<input id="textalign" ej-dropdownlist #textalign (select)="onchange1($event)" [selectedIndex]="0" [dataSource]="['Center', 'Near', 'Far']" width="100%" />
+							</div>
+						<div class="col-md-3">
+						Border Style </div>
+						<div class="col-md-3">
+							<input id="borderstyle" ej-dropdownlist #borderstyle (select)="onchange1($event)" [selectedIndex]="0" [dataSource]="['rectangle', 'none', 'withouttopandbottomborder','brace','curlybrace']" width="100%" />
+						</div> </div> <br/>
+						<div class="row">
+						<div class="col-md-3">
+						Border Color</div>
+						<div class="col-md-3">
+              <input id="colorPick" type="text" ej-textbox (change)="onchange2($event)" width="100%" />  						 
+						</div>
+                   </div>
+</div>
+</div>
