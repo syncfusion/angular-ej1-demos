@@ -1,7 +1,0 @@
-<ej-chart id="polarChart" style="display:block;" [isResponsive]="true" [legend.visible]="true" [primaryYAxis.range.min]="15" [primaryYAxis.range.max]="90" [primaryYAxis.range.interval]="15" commonSeriesOptions.type="polar" commonSeriesOptions.tooltip.visible="true" (load)="onchartload($event)">
-    <e-seriescollection>
-        <e-series [dataSource]="dataList" xName="xName" yName="yName2" name="Area" drawType="Area" [marker.visible]="true" fill="#E94649"></e-series>
-        <e-series [dataSource]="dataList" xName="xName" yName="yName1" name="Column" drawType="Column" zorder=1></e-series>
-        <e-series [dataSource]="dataList" xName="xName" yName="yName" name="Line" zorder=2 [marker.visible]="true" e-fill="#6FAAB0"></e-series>
-    </e-seriescollection>
-</ej-chart>
