@@ -1,0 +1,46 @@
+    <ej-ribbon id="Default" width="100%" applicationTab.type="backstage" applicationTab.backstageSettings.text="FILE" applicationTab.backstageSettings.height="400" applicationTab.backstageSettings.width="100%" applicationTab.backstageSettings.headerWidth="120">
+        <e-applicationtab-backstagesettings-pages>
+            <e-page id="account" text="Office Account" contentID="accountCon">
+            </e-page>
+            <e-page id="close" text="Close" itemType="button">
+            </e-page>
+        </e-applicationtab-backstagesettings-pages>
+        <e-tabs>
+            <e-tab id="home1" text="HOME" [groups]="groups1">
+            </e-tab>
+            <e-tab id="insert" text="INSERT" [groups]="insert">
+            </e-tab>
+        </e-tabs>
+    </ej-ribbon>
+
+<style type="text/css">
+    .e-designtablestyle label {
+        font-weight: normal;
+        font-size: 12px;
+        margin-left: 5px;
+    }
+</style>
+<div id="accountCon">
+    <div class="e-userDiv">
+        <span>User Information</span>
+        <div>
+            <div class="e-accuser e-newpageicon"></div>
+            <div class="e-userCon">
+                <div>user</div>
+                <div>xyz@syncfusion.com</div>
+            </div>
+        </div>
+    </div>
+    <a href="#">Sign out</a>
+</div>
+<style type="text/css">
+    .e-accuser {
+        background-image: url("../deps/css/ej/common-images/ribbon/User.jpg");
+    }
+
+    .e-newpageicon {
+        background-repeat: no-repeat;
+        height: 42px;
+        width: 42px;
+    }
+</style>

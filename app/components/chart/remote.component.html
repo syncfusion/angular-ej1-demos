@@ -1,0 +1,18 @@
+<ej-chart id="remote" style="display:block;"  primaryXAxis.rangePadding='Additional'
+				primaryXAxis.labelRotation="45"
+				primaryXAxis.title.text="City" primaryYAxis.title.text="Population in Millions" title.text="Population Growth"
+			[isResponsive]="true"
+			size.height="600"
+			[legend.visible]="false">
+    <e-seriescollection>
+        <e-series name='Country' 
+					type='column'
+					[enableAnimation]="true"
+					[dataSource]="DataManger"
+					xName="ShipCity"
+					yName="Freight"
+					fill="#69D2E7"
+					[tooltip.visible]="true"
+					></e-series>
+    </e-seriescollection>
+</ej-chart>

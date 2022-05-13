@@ -1,0 +1,20 @@
+<ej-chart id="radar" style="display:block;" [primaryYAxis.range.min]="15" [primaryYAxis.range.max]="90" [primaryYAxis.range.interval]="15" (load)="onchartload($event)" commonSeriesOptions.type='radar'
+				[commonSeriesOptions.tooltip.visible]="true" [isResponsive]="true"
+            size.height="600"
+            [legend.visible]="true">
+    <e-seriescollection>
+        <e-series [dataSource]="radarData1" xName="x" yName="y" [zOrder]="2"
+					[marker.visible]="true"
+					name='Line'></e-series>
+        <e-series [dataSource]="radarData2" xName="x" yName="y" drawType='column'
+					[zOrder]="1"
+					name='Column'
+					[tooltip.visible]="true"
+					border.color='white' [border.width]="1"
+					></e-series>
+        <e-series [dataSource]="radarData3" xName="x" yName="y" [zOrder]="0"
+					drawType='area'
+					[marker.visible]="true"
+					name='Area'></e-series>
+    </e-seriescollection>
+</ej-chart>

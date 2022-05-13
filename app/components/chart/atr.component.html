@@ -1,0 +1,64 @@
+<ej-chart #atr id="atr" style="display:block;" (load)="onchartload($event)"  primaryXAxis.title.text="Date"
+                primaryXAxis.valueType="datetime"
+				primaryXAxis.labelFormat="dd,MMM" primaryYAxis.labelFormat='${value}'
+				[primaryYAxis.range.min]="55" [primaryYAxis.range.max]="75" [primaryYAxis.range.interval]="5" [axes]="Axes"
+			[zooming.enable]="true"
+			[crosshair.visible]="true" 
+			crosshair.type="trackball"
+			(trackToolTip)="track($event)"			
+			[isResponsive]="true"
+            load="loadTheme"                          
+            title.text="ATR Indicator"
+            size.height="600"
+            [legend.visible]="false">
+    <e-seriescollection>
+        <e-series [dataSource]="atrData"
+					xName="xDate"
+					high="High"
+					low="Low"
+					open="Open"
+					close="Close"
+                    name='Hilo'
+					type='hiloopenclose'
+					drawMode='both' 
+					tooltip.visible="false"
+					tooltip.format="#point.x#<br/>Open : $#point.open#<br/>High : $#point.high#<br/>Low : $#point.low#<br/>Close : $#point.close#<br/>" 
+					[enableAnimation]="true"></e-series>
+	</e-seriescollection>
+	<e-chart-indicators>
+	  <e-chart-indicator type="atr" 
+					seriesName="Hilo" 
+					yAxisName="yaxis" 
+                    fill="blue" 
+					width="2"
+					[tooltip.visible]="false" 
+					tooltip.format="" 
+				    tooltip.fill="transparent"
+				    tooltip.border.color="transparent"
+                    [enableAnimation]="true">
+	  </e-chart-indicator>
+	</e-chart-indicators>
+
+</ej-chart>
+
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+     <div class="row">
+						<div class="col-md-3">
+							Period:
+						</div>
+						<div class="col-md-3 aligntop">
+							 <input id="period" type="text" ej-numerictextbox  value="35" (ejchange)="onchange2($event)"/>
+						</div>
+					</div>
+					<br />
+					<div class="row">
+                        <div class="col-md-3">
+                            Signal Line Stroke:
+                        </div>
+                        <div class="col-md-3 aligntop">
+							 <input id="signalLine" ej-dropdownlist #signalLine (select)="onchange1($event)" [selectedIndex]="0" [dataSource]="['Blue', 'Yellow', 'Green','Red']" width="60%" />
+                        </div>						 
+					</div>
+ </div>
+ </div>
