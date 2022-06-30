@@ -1,0 +1,20 @@
+<div style="width:100%;height:100%;">
+    <div class="content-container-fluid">
+        <div class="row">
+            <div class="autocomplete">
+                <div class="cols-sample-area">
+                    <div class="frame">
+                        <div class="atccontrol multipleValue">
+                        <span class="txt deli">Using Delimiter</span>
+                        <input type="text" id="delimit" ej-autocomplete  width="100%" [showPopupButton]="true" multiSelectMode="delimiter" watermarkText="Select skills" [dataSource]="language" />
+                    </div>
+                    <div class="">
+                       <span class="txt visual">Using VisualMode</span>
+                        <input type="text" id="visualmode" ej-autocomplete width="100%" [showPopupButton]="true" multiSelectMode="visualmode" watermarkText="Select skills" [dataSource]="language"/>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

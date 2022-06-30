@@ -1,0 +1,9 @@
+<ej-pivotgrid [dataSource.data]="data" [dataSource.rows]="rows" [dataSource.columns]="columns" [dataSource.values]="values" [isResponsive]="true" [enableConditionalFormatting]="true" >
+</ej-pivotgrid>
+
+<div id="property-window" class="box wide" style="width: 300px">
+	<div style="margin: 10px 10px 20px 0px"><b>Apply Formatting</b>
+    </div>
+    <input id="conFormat" ej-button size="normal" (click)="onConFormat($event)" value="Apply" text="Apply" />
+    <input id="reset" ej-button size="normal" (click)="onReset($event)" value="Reset" text="Reset" />
+</div>

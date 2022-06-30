@@ -1,0 +1,35 @@
+<ej-chart #multipie id="multipie" style="display:block;" commonSeriesOptions.border.color='white'
+                    commonSeriesOptions.type='pie' [isResponsive]="true"
+                size.height='600'
+                (seriesRendering)="seriesRender($event)"
+                title.text="List of Countries by Population"
+                [legend.visible]="true">
+    <e-seriescollection>
+        <e-series type="pie" [dataSource]="MultiPieData1" xName="x" yName="y" pointColorMappingName="fill" marker.dataLabel.textMappingName="text"
+		 marker.dataLabel.visible="true" marker.dataLabel.connectorLine.color='black' marker.dataLabel.connectorLine.type='bezier' marker.dataLabel.font.color="white"
+                      labelPosition='inside'
+                      pieCoefficient="0.6"
+                      doughnutSize="0.6"
+                      name="Continents">
+        </e-series>
+		 <e-series type="pie" [dataSource]="MultiPieData2" xName="x" yName="y" pointColorMappingName="fill"
+		 [marker.dataLabel.visible]="true" marker.dataLabel.textMappingName="text" marker.dataLabel.connectorLine.color='black' marker.dataLabel.connectorLine.type='bezier'
+                      labelPosition='outside'
+                      name="Countries">
+        </e-series>
+    </e-seriescollection>
+</ej-chart>
+
+<div class="panel-body">
+   <div id="property-window" class="box wide">
+     <div class="row" style="margin: 10px 0;">
+                        <div class="col-md-3">
+                            Series Type
+                        </div>
+                        <div class="col-md-3 aligntop">
+						<input id="type" ej-dropdownlist #type (select)="onChange($event)" [selectedIndex]="0" [dataSource]="['Pie', 'Doughnut']" width="100%" />
+                        </div>
+                    </div>
+
+</div>
+</div>
