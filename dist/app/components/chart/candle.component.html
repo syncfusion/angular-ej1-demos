@@ -1,0 +1,6 @@
+<ej-chart id="candle" style="display:block;" [legend.visible]="false" [isResponsive]="true" title.text="Foreign Exchange Rate Analysis" [primaryXAxis.intervalType]="years" primaryXAxis.title.text="Date" [primaryYAxis.range.min]="0" [primaryYAxis.range.max]="250"
+    [primaryYAxis.range.interval]="50" primaryYAxis.labelIntersectAction="hide" primaryYAxis.labelFormat="${value}" (load)="onchartload($event)">
+    <e-seriescollection>
+        <e-series [dataSource]="UnemploymentList" type="candle" xName="xName" high="high" low="low" open="open" close="close"></e-series>
+    </e-seriescollection>
+</ej-chart>

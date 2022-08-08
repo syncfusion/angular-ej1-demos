@@ -1,0 +1,8 @@
+<ej-kanban [dataSource]="kanbanData" keyField="Status" fields.content="Summary" fields.primaryKey="Id" allowTitle="true" fields.tag="Tags" fields.imageUrl="ImgUrl" fields.color="Type" [cardSettings.colorMapping]="colorMap">
+    <e-kanban-columns>
+        <e-kanban-column key="Open" headerText="Backlog"></e-kanban-column>
+        <e-kanban-column key="InProgress" headerText="In Progress"></e-kanban-column>
+        <e-kanban-column key="Testing" headerText="Testing"></e-kanban-column>
+        <e-kanban-column key="Close" headerText="Done"></e-kanban-column>
+    </e-kanban-columns>
+</ej-kanban>
