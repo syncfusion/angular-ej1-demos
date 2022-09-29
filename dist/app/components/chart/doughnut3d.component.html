@@ -1,0 +1,25 @@
+﻿<ej-chart id="doughnut3d" style="display:block;" (load)="onchartload($event)"
+		    [enable3D]="true"	
+			[enableRotation]="true"			
+            [depth]="30"
+            [tilt]="-30"
+            [rotation]="-30"
+            [perspectiveAngle]="90"                       
+            [isResponsive]="true"                   
+            title.text="People's Hobbies"
+            size.height="600" size.width="970"               
+            [legend.visible]="false"  commonSeriesOptions.labelPosition='outside'>
+    <e-seriescollection>
+        <e-series [dataSource]="doughnutData" xName="xValue" yName="yValue1" type='doughnut' 
+					[explodeIndex]="4" 
+					[doughnutCoefficient]="0.5" 
+					[doughnutSize]="0.8"
+                         [tooltip.visible]="true"
+						 tooltip.format="#point.x# : #point.y#%"
+						 marker.dataLabel.shape='none'
+						 marker.dataLabel.textMappingName="text"
+						 [marker.dataLabel.visible]="true" 
+						 marker.dataLabel.textPosition='top' 
+						 [marker.dataLabel.connectorLine.height]="30" marker.dataLabel.connectorLine.stroke='black'></e-series>
+    </e-seriescollection>
+</ej-chart>

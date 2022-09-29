@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <base href="/" />
+    <title>Essential JS 1 for Angular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="description" content="Essential JS 1 for Angular | Syncfusion Angular Component demos" />
+    <link rel="shortcut icon" type="image/png" href="deps/css/images/browser-logo.png">
+    <link href="deps/css/default.css" rel="stylesheet" />
+    <link href="deps/css/ej/bootstrap-theme/ej.web.all.min.css" rel="stylesheet" />
+    <link href="deps/css/bootstrap.min.css" rel="stylesheet">
+    <link href="deps/css/ej/ribbon-css/ej.icons.css" rel="stylesheet" />
+
+    <script src="deps/scripts/codemirror/codemirror.js" type="text/javascript"></script>
+    <script src="deps/scripts/codemirror/javascript.js" type="text/javascript"></script>
+    <script src="deps/scripts/codemirror/css.js" type="text/javascript"></script>
+    <script src="deps/scripts/codemirror/xml.js" type="text/javascript"></script>
+    <script src="deps/scripts/codemirror/htmlmixed.js" type="text/javascript"></script>
+    <script src="deps/scripts/codemirror/clike.js" type="text/javascript"></script>
+    <link href="deps/scripts/codemirror/codemirror.min.css" rel="stylesheet" />
+
+</head>
+
+<!-- 3. Display the application -->
+
+<body class="user-select">
+ <ej-app>
+    <div class="splash">
+        <div class="message">Essential JS 1 Angular Components</div>
+        <div class="spinner"></div>
+    </div>
+</ej-app>
+<script id="healthAddTemplate" type="text/x-jsrender">
+        <table cellspacing="14px">
+            <tr>
+                <td>Food time:
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="timelist valid" id="Time" name="Time" value="{{:Time}}" aria-required="true" />
+                </td>
+            </tr>
+            <tr>
+                <td>Food type:
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="foodlist ejinputtext valid" id="FoodName" name="FoodName" value="{{:FoodName}}" aria-required="true" />
+                </td>
+            </tr>
+        </table>
+        <table cellspacing="14px">
+            <tr>
+                <td>Fat:
+                </td>
+                <td>Carb:
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="Fat" name="Fat" value="{{:Fat}}" class="diatxt valid" aria-required="true" />
+                </td>
+                <td>
+                    <input type="text" id="Carbohydrate" name="Carbohydrate" value="{{:Carbohydrate}}" class="diatxt valid" aria-required="true" />
+                </td>
+            </tr>
+            <tr>
+                <td>Protein:
+                </td>
+                <td>Calorie:
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="Protein" name="Protein" value="{{:Protein}}" class="diatxt" aria-required="true" />
+                </td>
+                <td>
+                    <input type="text" id="Calorie" name="Calorie" value="{{:Calorie}}" class="diatxt" aria-required="true" />
+                </td>
+            </tr>
+            <tr>
+                <td id="validation">* All fields are mandatory</td>
+            </tr>
+        </table>
+</script>
+<script src="//l2.io/ip.js?var=window.myip"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+ 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-233131-1"></script>
+<script>
+ 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-233131-1' , {
+  'linker':
+    { 'domains': ['syncfusion.com'] }
+  });
+ 
+</script>
+
+</body>
+
+</html>
