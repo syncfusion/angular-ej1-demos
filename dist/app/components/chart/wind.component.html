@@ -1,0 +1,40 @@
+<ej-chart id="wind" style="display:block;" (load)="onchartload($event)"   primaryXAxis.title.text='Directions'
+                primaryXAxis.labelPlacement='onticks' primaryYAxis.title.text='Efficiency'
+				[primaryYAxis.range.min]="0" [primaryYAxis.range.max]="12" [primaryYAxis.range.interval]="2"
+				primaryYAxis.labelFormat="{value}%" commonSeriesOptions.type='polar'
+				[commonSeriesOptions.isStacking]="true" 
+				commonSeriesOptions.drawType='column'
+               commonSeriesOptions.marker.shape='circle'
+               [commonSeriesOptions.marker.visible]="false"
+			   title.text='Wind Rose Chart'
+            size.height="600"
+            [legend.visible]="true" legend.position='right' legend.alignment='near' legend.title.text='WindSpeed Knots' legend.alignment='center'>
+	<e-seriescollection>
+	  <e-series [dataSource]="windData1" xName="x" yName="y" name='0 -3'
+			    fill='#F37021'>
+	  </e-series>
+	   <e-series [dataSource]="windData2" xName="x" yName="y" name='3 -6'
+			    fill='#FD9D6F'>
+	  </e-series>
+	   <e-series [dataSource]="windData3" xName="x" yName="y" name='6 -9'
+			    fill='#FEE378'>
+	  </e-series>
+	   <e-series [dataSource]="windData4" xName="x" yName="y" name='9 -11'
+			    fill='#97D6E8'>
+	  </e-series>
+	   <e-series [dataSource]="windData5" xName="x" yName="y" name='11 -14'
+			    fill='#4DB797'>
+	  </e-series>
+	   <e-series [dataSource]="windData6" xName="x" yName="y" name='14 -17'
+			    fill='#6666FF'>
+	  </e-series>
+	   <e-series [dataSource]="windData7" xName="x" yName="y" name='17 -20'
+			    fill='#6251B5'>
+	  </e-series>
+	   <e-series [dataSource]="windData8" xName="x" yName="y" name='23 Above'
+			    fill='#2326AF'>
+	  </e-series>
+	</e-seriescollection>
+</ej-chart>
+
+

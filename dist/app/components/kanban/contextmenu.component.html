@@ -1,0 +1,8 @@
+<ej-kanban [dataSource]="kanbanData" keyField="Status" fields.content="Summary" fields.primaryKey="Id" fields.imageUrl="ImgUrl" contextMenuSettings.enable="true" editSettings.allowEditing="true" editSettings.allowAdding="true" fields.swimlaneKey="Assignee" fields.priority="RankId" [editSettings.editItems]="editItem">
+    <e-kanban-columns>
+        <e-kanban-column key="Open" headerText="Backlog"></e-kanban-column>
+        <e-kanban-column key="InProgress" headerText="In Progress"></e-kanban-column>
+        <e-kanban-column key="Testing" headerText="Testing"></e-kanban-column>
+        <e-kanban-column key="Close" headerText="Done"></e-kanban-column>
+    </e-kanban-columns>
+</ej-kanban>

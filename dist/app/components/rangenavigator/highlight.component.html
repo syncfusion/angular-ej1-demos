@@ -1,0 +1,70 @@
+ <div class="content-container-fluid">
+        <div class="row">
+            <div class="cols-sample-area">
+                <div id="container">
+				  <ej-chart  #chart style="display:block;" id="chart" [primaryXAxis.majorGridLines.visible]= "false"
+                                   primaryXAxis.valueType='datetime'
+                                   primaryXAxis.labelFormat="MMM dd"
+                                   primaryXAxis.title.text='Date' primaryYAxis.labelFormat='${value}'
+                               primaryYAxis.title.text='Price ($)' 
+                               [primaryYAxis.range.min]="60" [primaryYAxis.range.max]="160" [primaryYAxis.range.interval]="20"[crosshair.visible]="true"
+                     crosshair.type='trackball'
+                     crosshair.marker.shape='circle'
+                    [crosshair.marker.visible]="true" size.height="600" 
+				  (load)="onchartload($event)"
+                            size.height="400"
+                            [legend.visible]="true"
+							title.text='Stock Price Analysis'>
+	<e-seriescollection>
+	  <e-series   type='spline'
+                            name='Product X'
+                            [enableAnimation]="true" tooltipFormat="#point.x#  : #point.y#"
+                             fill='#4EC9DD'
+                            tooltip.format="#point.x#  : ej.format(#point.y#,n2)"
+                             ></e-series>
+	</e-seriescollection>
+				  </ej-chart>
+				</div>
+                <div id="scrollcontent">
+                    <ej-rangenavigator #range style="display:block;" align="center" id="range" [tooltipSettings]="rntooltip" enableDefferedUpdate="true" padding="15" [series]="series" [navigatorStyleSettings]="navigator" [labelSettings]="label" [allowSnapping]="true"
+    selectedRangeSettings.start="2010/4/1" border.color="#f2f3f4" border.width="3" paddin="15" selectedRangeSettings.end="2010/9/1" [isResponsive]="true" sizeSettings.height="120" (rangeChanged)="onchartloaded($event)">
+</ej-rangenavigator>
+                </div>
+            </div>
+            <div id="sampleProperties" class="box wide">
+                <div class="prop-grid">
+                    <div class="row">
+                        <div class="col-md-3">
+                            Enable Highlight
+                        </div>
+                        <div class="col-md-3 aligntop">
+							 <ej-checkbox #enablehigh (ejchange)="onchange1($event)" [checked]="true"></ej-checkbox>
+                        </div>
+                    <div class="col-md-3">
+                            Enable Selection
+                        </div>
+                        <div class="col-md-3 aligntop">
+							 <ej-checkbox #enablesel (ejchange)="onchange2($event)" [checked]="true"></ej-checkbox>
+                        </div>
+                    </div>
+					<br/>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Highlight Color
+                        </div>
+                        <div class="col-md-3 aligntop">
+							<input id="colorPick" type="text" ej-numerictextbox  value="" (ejchange)="onchange3($event)" width="100%" />
+
+                        </div>
+                    <div class="col-md-3">
+                            Selection Color
+                        </div>
+                        <div class="col-md-3 aligntop">
+							<input id="colorPick1" type="text" ej-numerictextbox  value="" (ejchange)="onchange4($event)" width="100%" />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

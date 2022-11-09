@@ -1,0 +1,13 @@
+<ej-tab selectedItemIndex="0" (itemActive)="onTabItemChange($event)">
+    <ul>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#ts">TypeScript</a></li>
+        
+    </ul>
+    <div id="html">
+        <textarea id="htmlsourcecache" style="display:block" [(value)]="htmlSourceResult"></textarea>
+    </div>
+    <div id="ts">
+        <textarea id="tssourcecache" style="display:block" [(value)]="tsSourceResult"></textarea>
+    </div>
+</ej-tab>
