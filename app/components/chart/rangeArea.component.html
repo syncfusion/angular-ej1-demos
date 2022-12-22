@@ -1,0 +1,19 @@
+<ej-chart id="radar" style="display:block;"  primaryXAxis.title.text='Year'
+                [primaryXAxis.axisLine.visible]="false"                              
+				[primaryXAxis.majorGridLines.visible]="false"
+                [primaryXAxis.majorTickLines.visible]="false"  primaryYAxis.title.text='Gold Price in Billion U.S Dollars'
+                [primaryYAxis.axisLine.visible]="false"
+                [primaryYAxis.majorGridLines.visible]="true" [commonSeriesOptions.enableAnimation]="true"
+                commonSeriesOptions.type='rangearea' [zooming.enable]="true" 
+				[zooming.enableMouseWheel]="true" 
+            title.text='World Gold Price'
+            size.height="600"
+            (load)="onchartload($event)"
+            [isResponsive]="true"
+            [legend.visible]="true">
+    <e-seriescollection>
+        <e-series  [border.width]="1" border.color='Indigo'
+                    fill="Indigo"  [opacity]="0.5"
+					name='Gold Value'></e-series>
+    </e-seriescollection>
+</ej-chart>

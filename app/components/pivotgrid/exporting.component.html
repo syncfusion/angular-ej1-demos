@@ -1,0 +1,30 @@
+<ej-pivotgrid id="PivotGrid1" [dataSource.data]="data" [dataSource.rows]="rows" [dataSource.columns]="columns" [dataSource.values]="values">
+</ej-pivotgrid>
+<div id="property-window" class="box wide" style="width: 350px">
+    <div class="row" style="margin-top: 20px">
+        <table width="300px">
+            <tr>
+                <td> Data Source </td>
+                <td>
+                    <input id="rdbRelational" type="radio" ej-radiobutton name="radio1" [checked]="true" value="relational" (ejchange)="onChange($event)" /> Relatioanl</td>
+                <td>
+                    <input id="rdbOlap" ej-radiobutton type="radio" name="radio1" value="olap" (ejchange)="onChange($event)" /> OLAP</td>
+            </tr>
+        </table>
+    </div>
+    <div class="row" style="margin-top: 20px">
+        <table width="300px">
+            <tr>
+                <td class="chkrad">
+                    Export Option
+                </td>
+                <td class="chkrad" colspan="2">
+                    <input id="exportOptions" ej-dropdownlist  [dataSource]="exportOptions" [(value)]="value" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row" style="margin:20px 0px 10px 90px">
+        <input style="float: left" id="export" ej-button size="normal" (click)="ExportBtnClick($event)" value="Export" text="Export" />
+    </div>
+</div>

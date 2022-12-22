@@ -1,0 +1,11 @@
+<ej-chart id="container" style="display:block;" (load)="onchartload($event)" [isResponsive]="true" title.text="Olympic Medals" size.height="450px" chartArea.border.width="1" primaryXAxis.title.text="Countries" primaryXAxis.tickLinesPosition="inside" [commonSeriesOptions.tooltip.visible]="true"
+    [primaryYAxis.range.min]="0" [primaryYAxis.range.max]="80" [primaryYAxis.range.interval]="20" commonSeriesOptions.tooltip.format="#point.x# :  #point.y#" [legend.visible]="true" legend.position="top" size.width="1000px">
+    <e-seriescollection>
+        <e-series type="column" name="Gold" enableAnimation="true" xName="xName" [dataSource]="chartData" yName="yName">
+        </e-series>
+        <e-series type="column" name="Silver" enableAnimation="true" xName="xName" [dataSource]="chartData" yName="yName1">
+        </e-series>
+        <e-series type="column" name="Bronze" enableAnimation="true" xName="xName" [dataSource]="chartData" yName="yName2">
+        </e-series>
+    </e-seriescollection>
+</ej-chart>
